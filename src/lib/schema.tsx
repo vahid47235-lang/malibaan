@@ -109,6 +109,40 @@ export function serviceSchema({
   };
 }
 
+export function articleSchema({
+  title,
+  description,
+  slug,
+  publishedAt,
+}: {
+  title: string;
+  description: string;
+  slug: string;
+  publishedAt: string;
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: title,
+    description,
+    url: `${SITE_URL}/blog/${slug}`,
+    datePublished: publishedAt,
+    author: {
+      "@type": "Organization",
+      name: ORG_NAME,
+      url: SITE_URL,
+    },
+    publisher: {
+      "@type": "Organization",
+      name: ORG_NAME,
+      logo: {
+        "@type": "ImageObject",
+        url: `${SITE_URL}/brand/malibaan-mark.png`,
+      },
+    },
+  };
+}
+
 export function JsonLd({ data }: { data: object }) {
   return (
     <script
