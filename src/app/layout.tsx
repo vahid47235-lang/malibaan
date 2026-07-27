@@ -24,6 +24,14 @@ export const metadata: Metadata = {
   description:
     "مالی‌بان، مشاور حسابداری، مالیاتی و بیمه‌ای برای کسب‌وکارهای ایرانی؛ از ثبت شرکت تا حسابرسی، با شفافیت و دقتی که کسب‌وکار شما شایسته آن است.",
   alternates: { canonical: "/" },
+  manifest: "/manifest.json",
+  icons: {
+    icon: [
+      { url: "/brand/favicon/icon-192.png", sizes: "192x192", type: "image/png" },
+      { url: "/brand/favicon/icon-512.png", sizes: "512x512", type: "image/png" },
+    ],
+    apple: "/brand/favicon/apple-touch-icon.png",
+  },
   openGraph: {
     type: "website",
     locale: "fa_IR",

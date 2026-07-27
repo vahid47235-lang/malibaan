@@ -2,20 +2,24 @@
 
 /* ---------------------------------------------------------------------
    Malibaan Design Tokens
-   Source: BOLD Creative Studio brand book (Malibaan-peresentation-0640629-v02.pdf)
-   Colors sampled directly from brand book renders.
+   Source: BOLD Creative Studio brand book (docs/brand/malibaan-brand-book.pdf,
+   see docs/brand/BRAND-GUIDELINES.md for the distilled reference).
+   green-900/600 and mint-500/400/300 are the exact brand-book swatches;
+   green-950/800/700 and cream-100 are derived shades for UI depth.
 --------------------------------------------------------------------- */
 :root {
-  --color-brand-green-950: #0a2e10;
-  --color-brand-green-900: #0d4113; /* primary deep forest green */
-  --color-brand-green-800: #12551a;
-  --color-brand-green-700: #1b6b26;
-  --color-brand-green-600: #2f8a3a;
-  --color-brand-mint-500: #a8e77f;
-  --color-brand-mint-400: #cdf4b5; /* accent mint/lime */
-  --color-brand-mint-300: #e1f7cf;
-  --color-brand-cream-100: #fef1e8; /* warm cream background */
-  --color-brand-cream-50: #fff8f3;
+  --color-brand-green-950: #09300e;
+  --color-brand-green-900: #0d4214; /* primary deep forest green (exact) */
+  --color-brand-green-800: #20662f;
+  --color-brand-green-700: #328848;
+  --color-brand-green-600: #50c173; /* brand book "step 2" green (exact) */
+  --color-brand-mint-500: #96e2a0; /* brand book "step 3" (exact) */
+  --color-brand-mint-400: #ade9ca; /* brand book "step 4" (exact) */
+  --color-brand-mint-300: #e2f9ec; /* brand book "step 5", lightest (exact) */
+  --color-brand-cream-100: #f3f4ed; /* derived, deeper cream for section alternation */
+  --color-brand-cream-50: #fdf9f5; /* brand book cream (exact) */
+  --color-brand-sage-tint: #c3e0c7; /* brand book pairing tint (exact) */
+  --color-brand-blue-tint: #e3ecf3; /* brand book pairing tint (exact) */
   --color-brand-ink-900: #14251a;
   --color-brand-ink-600: #4a5c50;
   --color-brand-ink-400: #7c8c81;
@@ -39,6 +43,8 @@
   --color-brand-mint-300: var(--color-brand-mint-300);
   --color-brand-cream-100: var(--color-brand-cream-100);
   --color-brand-cream-50: var(--color-brand-cream-50);
+  --color-brand-sage-tint: var(--color-brand-sage-tint);
+  --color-brand-blue-tint: var(--color-brand-blue-tint);
   --color-brand-ink-900: var(--color-brand-ink-900);
   --color-brand-ink-600: var(--color-brand-ink-600);
   --color-brand-ink-400: var(--color-brand-ink-400);
