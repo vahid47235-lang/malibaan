@@ -99,6 +99,45 @@ export default async function ServiceDetailPage({
           </Container>
         </section>
 
+        {/* Offerings checklist */}
+        {service.offerings && service.offerings.length > 0 && (
+          <section className="bg-white py-20 sm:py-24">
+            <Container>
+              <SectionHeading
+                eyebrow="دامنه خدمات"
+                title={`مواردی که در «${service.navLabel}» پوشش می‌دهیم`}
+                align="center"
+                className="mx-auto"
+              />
+              <div className="mx-auto mt-12 grid max-w-4xl gap-4 sm:grid-cols-2">
+                {service.offerings.map((offering) => (
+                  <div
+                    key={offering}
+                    className="flex items-start gap-3 rounded-xl border border-brand-line bg-brand-cream-50 p-4 text-[15px] leading-7 text-brand-ink-700"
+                  >
+                    <svg
+                      width="18"
+                      height="18"
+                      viewBox="0 0 16 16"
+                      fill="none"
+                      className="mt-0.5 shrink-0 text-brand-green-700"
+                    >
+                      <path
+                        d="M3 8.5L6.2 11.5L13 4.5"
+                        stroke="currentColor"
+                        strokeWidth="1.6"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                    </svg>
+                    {offering}
+                  </div>
+                ))}
+              </div>
+            </Container>
+          </section>
+        )}
+
         {/* Problems solved */}
         <section className="bg-brand-green-950 py-20 text-white sm:py-24">
           <Container>

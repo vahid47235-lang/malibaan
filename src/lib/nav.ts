@@ -13,4 +13,8 @@ export const serviceLinks = [
   { label: "سامانه مودیان و ارزش‌افزوده", href: "/services/vat" },
   { label: "حقوق و دستمزد و بیمه تأمین اجتماعی", href: "/services/payroll" },
   { label: "حسابرسی و کنترل داخلی", href: "/services/audit" },
+  { label: "ثبت برند و مالکیت فکری", href: "/services/intellectual-property" },
+  { label: "مشاوره مالی و مدیریتی", href: "/services/financial-consulting" },
+  { label: "خدمات حقوقی کسب‌وکار", href: "/services/business-legal" },
+  { label: "خدمات دیجیتال و فناوری مالی", href: "/services/digital-fintech" },
 ];
