@@ -87,7 +87,7 @@ export default function AboutPage() {
               />
               <div className="relative flex h-full flex-col items-center justify-center gap-6 p-8">
                 <Image
-                  src="/brand/malibaan-mark.png"
+                  src="/brand/png/white/malibaan-symbol-white-512.png"
                   alt="نماد مالی‌بان"
                   width={310}
                   height={397}
