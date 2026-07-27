@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Vazirmatn, Inter } from "next/font/google";
+import { JsonLd, organizationSchema, localBusinessSchema } from "@/lib/schema";
 import "./globals.css";
 
 const vazirmatn = Vazirmatn({
@@ -46,6 +47,8 @@ export default function RootLayout({
       className={`${vazirmatn.variable} ${latin.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-brand-cream-50 text-brand-ink-900">
+        <JsonLd data={organizationSchema()} />
+        <JsonLd data={localBusinessSchema()} />
         {children}
       </body>
     </html>

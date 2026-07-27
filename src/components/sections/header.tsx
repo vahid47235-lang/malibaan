@@ -6,6 +6,7 @@ import { Container } from "@/components/ui/container";
 import { Logo } from "@/components/ui/logo";
 import { Button } from "@/components/ui/button";
 import { mainNav } from "@/lib/nav";
+import { toPersianDigits } from "@/lib/utils";
 
 export function Header() {
   const [open, setOpen] = useState(false);
@@ -31,11 +32,11 @@ export function Header() {
 
         <div className="hidden items-center gap-3 lg:flex">
           <a
-            href="tel:+982100000000"
+            href="tel:+989900035009"
             className="text-sm font-medium text-brand-ink-600 hover:text-brand-green-900"
             dir="ltr"
           >
-            ۰۲۱-۰۰۰۰-۰۰۰۰
+            {toPersianDigits("0990-003-5009")}
           </a>
           <Button href="/consultation" size="sm">
             درخواست مشاوره رایگان

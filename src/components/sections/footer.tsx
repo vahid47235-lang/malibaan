@@ -5,9 +5,8 @@ import { mainNav, serviceLinks } from "@/lib/nav";
 import { toPersianDigits } from "@/lib/utils";
 
 const social = [
-  { label: "اینستاگرام", href: "https://instagram.com" },
-  { label: "لینکدین", href: "https://linkedin.com" },
-  { label: "تلگرام", href: "https://t.me" },
+  { label: "اینستاگرام", href: "https://instagram.com/malibaan" },
+  { label: "تلگرام", href: "https://t.me/malibaan" },
 ];
 
 export function Footer() {
@@ -64,8 +63,8 @@ export function Footer() {
             <h3 className="text-sm font-bold text-brand-ink-900">تماس با ما</h3>
             <ul className="mt-4 flex flex-col gap-3 text-sm text-brand-ink-600">
               <li dir="ltr">
-                <a href="tel:+982100000000" className="hover:text-brand-green-900">
-                  ۰۲۱-۰۰۰۰-۰۰۰۰
+                <a href="tel:+989900035009" className="hover:text-brand-green-900">
+                  {toPersianDigits("0990-003-5009")}
                 </a>
               </li>
               <li dir="ltr">
