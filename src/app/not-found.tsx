@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { Header } from "@/components/sections/header";
 import { Footer } from "@/components/sections/footer";
@@ -5,6 +6,11 @@ import { WhatsAppButton } from "@/components/ui/whatsapp-button";
 import { Container } from "@/components/ui/container";
 import { Button } from "@/components/ui/button";
 import { mainNav, serviceLinks } from "@/lib/nav";
+
+export const metadata: Metadata = {
+  title: "صفحه پیدا نشد",
+  robots: { index: false, follow: true },
+};
 
 export default function NotFound() {
   return (
