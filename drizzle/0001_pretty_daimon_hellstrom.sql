@@ -1,0 +1,1 @@
+ALTER TABLE "discount_rules" ADD COLUMN "required_category_ids" jsonb;
