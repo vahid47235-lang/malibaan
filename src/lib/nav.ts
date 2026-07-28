@@ -1,5 +1,6 @@
 export const mainNav = [
   { label: "خدمات", href: "/services" },
+  { label: "ماشین‌حساب هزینه", href: "/calculator" },
   { label: "درباره ما", href: "/about" },
   { label: "مشتریان", href: "/clients" },
   { label: "وبلاگ", href: "/blog" },

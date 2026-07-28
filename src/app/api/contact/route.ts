@@ -1,4 +1,6 @@
 import { NextResponse } from "next/server";
+import { db } from "@/db";
+import { leads } from "@/db/schema";
 
 type ContactPayload = {
   name?: unknown;
@@ -8,9 +10,9 @@ type ContactPayload = {
   honeypot?: unknown;
 };
 
-// NOTE: this endpoint currently only validates and logs submissions.
-// Wiring it to real email/SMS delivery and CRM storage is a follow-up task
-// once those providers (SMTP/SMS credentials, CRM API) are chosen.
+// NOTE: submissions are persisted to the leads table (visible in the admin
+// panel). Wiring real-time email/SMS notifications is a follow-up task once
+// an SMTP/SMS provider is chosen.
 export async function POST(request: Request) {
   let payload: ContactPayload;
   try {
@@ -35,12 +37,14 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: "invalid_phone" }, { status: 400 });
   }
 
-  console.log("[contact-lead]", {
+  const source = service === "مشاوره رایگان" ? "consultation_form" : "contact_form";
+  const fullMessage = service ? `[سرویس: ${service}] ${message}`.trim() : message || null;
+
+  await db.insert(leads).values({
     name,
     phone,
-    message: message.slice(0, 500),
-    service,
-    receivedAt: new Date().toISOString(),
+    message: fullMessage,
+    source,
   });
 
   return NextResponse.json({ ok: true });
