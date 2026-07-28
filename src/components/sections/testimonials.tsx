@@ -1,25 +1,11 @@
 import { Container } from "@/components/ui/container";
 import { SectionHeading } from "@/components/ui/section-heading";
+import { getFeaturedTestimonials, getTestimonialsForService } from "@/lib/testimonials-data";
 
-const testimonials = [
-  {
-    quote:
-      "بعد از سال‌ها کار با چند حسابدار متفاوت، مالی‌بان اولین تیمی بود که گزارش‌هایش را واقعاً می‌فهمیدم. الان تصمیم‌های مالی را با اطمینان بیشتری می‌گیرم.",
-    name: "مدیرعامل، شرکت تولیدی قطعات صنعتی",
-  },
-  {
-    quote:
-      "در بازرسی مالیاتی، تیم مالی‌بان کنارمان بود و پرونده را با مستندات دقیق دفاع کرد. جریمه‌ای که انتظارش را داشتیم، هرگز اتفاق نیفتاد.",
-    name: "مدیر مالی، مجموعه واردات و توزیع",
-  },
-  {
-    quote:
-      "راه‌اندازی سامانه مودیان برایمان پیچیده به نظر می‌رسید. مالی‌بان کل فرآیند را در کمتر از دو هفته و بدون وقفه در فروش پیاده‌سازی کرد.",
-    name: "بنیان‌گذار، فروشگاه اینترنتی",
-  },
-];
+export function Testimonials({ serviceSlug }: { serviceSlug?: string }) {
+  const testimonials = serviceSlug ? getTestimonialsForService(serviceSlug) : getFeaturedTestimonials();
+  if (testimonials.length === 0) return null;
 
-export function Testimonials() {
   return (
     <section className="bg-white py-20 sm:py-28">
       <Container>

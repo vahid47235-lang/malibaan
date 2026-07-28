@@ -218,7 +218,7 @@ export default async function ServiceDetailPage({
           </Container>
         </section>
 
-        <Testimonials />
+        <Testimonials serviceSlug={service.slug} />
 
         {/* FAQ */}
         <section className="py-20 sm:py-28">
