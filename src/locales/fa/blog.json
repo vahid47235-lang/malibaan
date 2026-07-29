@@ -1,0 +1,24 @@
+{
+  "meta": {
+    "title": "وبلاگ مالی‌بان",
+    "description": "مقالات آموزشی حسابداری، مالیات، حقوق و دستمزد، ثبت شرکت و حسابرسی؛ نوشته‌شده توسط تیم مالی‌بان برای کسب‌وکارهای ایرانی.",
+    "ogTitle": "وبلاگ مالی‌بان",
+    "ogDescription": "مقالات آموزشی حسابداری، مالیات و امور مالی برای کسب‌وکارهای ایرانی."
+  },
+  "breadcrumb": "وبلاگ",
+  "pageHeader": {
+    "eyebrow": "وبلاگ مالی‌بان",
+    "title": "راهنمای عملی حسابداری، مالیات و امور مالی کسب‌وکار",
+    "description": "مقالاتی که مسائل واقعی کسب‌وکارهای ایرانی را با زبانی ساده و کاربردی توضیح می‌دهند؛ نوشته‌شده توسط تیم مالی‌بان."
+  },
+  "categoryEyebrow": "دسته‌بندی وبلاگ",
+  "categoryTitleTemplate": "مقالات {category}",
+  "categoryMetaTitleTemplate": "مقالات {category}",
+  "categoryMetaDescriptionTemplate": "مقالات آموزشی وبلاگ مالی‌بان در حوزه {category}.",
+  "categoryDescriptionTemplate": "مقالاتی درباره {category} که به شما در تصمیم‌گیری بهتر کمک می‌کنند. برای دریافت مشاوره تخصصی، خدمت «{service}» مالی‌بان را ببینید.",
+  "readingMinutesSuffix": "دقیقه مطالعه",
+  "authorLabel": "تیم مالی‌بان",
+  "relatedServicePromptTemplate": "برای بررسی دقیق‌تر وضعیت «{service}» کسب‌وکار خود:",
+  "viewServiceCtaTemplate": "مشاهده خدمت {service}",
+  "relatedArticlesHeading": "مقالات مرتبط"
+}

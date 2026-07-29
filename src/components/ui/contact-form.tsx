@@ -2,18 +2,23 @@
 
 import { useState, type FormEvent } from "react";
 import { Button } from "@/components/ui/button";
+import { t } from "@/i18n/format";
+import type { CommonDictionary } from "@/i18n/dictionary-types";
 
 type Status = "idle" | "submitting" | "success" | "error";
 
 export function ContactForm({
+  dict,
   serviceLabel,
   className,
 }: {
+  dict: CommonDictionary;
   serviceLabel?: string;
   className?: string;
 }) {
   const [status, setStatus] = useState<Status>("idle");
   const [error, setError] = useState<string | null>(null);
+  const f = dict.forms;
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -26,11 +31,11 @@ export function ContactForm({
     const message = String(data.get("message") ?? "").trim();
 
     if (name.length < 2) {
-      setError("لطفاً نام و نام‌خانوادگی خود را وارد کنید.");
+      setError(f.errorNameTooShort);
       return;
     }
     if (!/^0?9\d{9}$/.test(phone.replace(/[\s-]/g, ""))) {
-      setError("شماره موبایل معتبر نیست. مثال: 09121234567");
+      setError(f.errorPhoneInvalid);
       return;
     }
 
@@ -54,7 +59,7 @@ export function ContactForm({
       form.reset();
     } catch {
       setStatus("error");
-      setError("ارسال درخواست با خطا مواجه شد. لطفاً دوباره تلاش کنید یا از طریق واتساپ پیام دهید.");
+      setError(f.errorGeneric);
     }
   }
 
@@ -62,10 +67,8 @@ export function ContactForm({
     return (
       <div className={className}>
         <div className="rounded-2xl border border-brand-green-900/20 bg-brand-mint-300/40 p-6 text-center">
-          <p className="text-lg font-bold text-brand-green-900">درخواست شما ثبت شد</p>
-          <p className="mt-2 text-[15px] leading-7 text-brand-ink-700">
-            یکی از کارشناسان مالی‌بان حداکثر تا یک روز کاری با شما تماس می‌گیرد.
-          </p>
+          <p className="text-lg font-bold text-brand-green-900">{f.successTitle}</p>
+          <p className="mt-2 text-[15px] leading-7 text-brand-ink-700">{f.successBody}</p>
         </div>
       </div>
     );
@@ -76,7 +79,7 @@ export function ContactForm({
       <div className="grid gap-4 sm:grid-cols-2">
         <div className="sm:col-span-1">
           <label htmlFor="name" className="mb-1.5 block text-sm font-medium text-brand-ink-900">
-            نام و نام‌خانوادگی
+            {f.fullName}
           </label>
           <input
             id="name"
@@ -84,12 +87,12 @@ export function ContactForm({
             type="text"
             required
             className="w-full rounded-xl border border-brand-line bg-white px-4 py-2.5 text-[15px] outline-none transition-colors focus:border-brand-green-900/50"
-            placeholder="مثلاً علی رضایی"
+            placeholder={f.fullNamePlaceholder}
           />
         </div>
         <div className="sm:col-span-1">
           <label htmlFor="phone" className="mb-1.5 block text-sm font-medium text-brand-ink-900">
-            شماره موبایل
+            {f.phone}
           </label>
           <input
             id="phone"
@@ -98,12 +101,12 @@ export function ContactForm({
             dir="ltr"
             required
             className="w-full rounded-xl border border-brand-line bg-white px-4 py-2.5 text-[15px] outline-none transition-colors focus:border-brand-green-900/50"
-            placeholder="09121234567"
+            placeholder={f.phonePlaceholder}
           />
         </div>
         <div className="sm:col-span-2">
           <label htmlFor="message" className="mb-1.5 block text-sm font-medium text-brand-ink-900">
-            توضیح کوتاه درباره نیاز شما (اختیاری)
+            {f.messageOptional}
           </label>
           <textarea
             id="message"
@@ -111,7 +114,7 @@ export function ContactForm({
             rows={4}
             className="w-full resize-none rounded-xl border border-brand-line bg-white px-4 py-2.5 text-[15px] outline-none transition-colors focus:border-brand-green-900/50"
             placeholder={
-              serviceLabel ? `سؤالم درباره «${serviceLabel}» است...` : "کسب‌وکار شما چه نیازی دارد؟"
+              serviceLabel ? t(f.messagePlaceholderWithService, { service: serviceLabel }) : f.messagePlaceholder
             }
           />
         </div>
@@ -129,7 +132,7 @@ export function ContactForm({
       {error && <p className="mt-3 text-sm text-red-600">{error}</p>}
 
       <Button type="submit" size="lg" className="mt-6 w-full sm:w-auto">
-        {status === "submitting" ? "در حال ارسال..." : "ارسال درخواست مشاوره"}
+        {status === "submitting" ? f.submitting : f.submit}
       </Button>
     </form>
   );

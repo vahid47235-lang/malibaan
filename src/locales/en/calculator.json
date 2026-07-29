@@ -1,0 +1,31 @@
+{
+  "meta": {
+    "title": "Service Cost Calculator",
+    "description": "Select the services your business needs and get an instant quote, including bundle discounts and referral codes.",
+    "ogTitle": "Malibaan Service Cost Calculator",
+    "ogDescription": "An instant quote for accounting, tax, and insurance services."
+  },
+  "breadcrumb": "Cost Calculator",
+  "pageHeader": {
+    "eyebrow": "Service Cost Calculator",
+    "title": "Work out the exact cost of the services you need, right here",
+    "description": "Select the services you're interested in — your quote, including bundle discounts and referral codes, updates instantly."
+  },
+  "noServicesInCategory": "No services listed in this category yet.",
+  "noServicesConfigured": "No services have been configured for the calculator yet.",
+  "quoteHeading": "Your Quote",
+  "referralLabel": "Referral code (optional)",
+  "referralPlaceholder": "e.g. ALI5",
+  "selectAtLeastOne": "Select at least one service from the list.",
+  "subtotalLabel": "Services subtotal",
+  "bundleDiscountTemplate": "Bundle discount ({rule}) — {percent}%",
+  "referralDiscountTemplate": "Referral code discount — {percent}%",
+  "totalDiscountTemplate": "Total discount ({percent}%)",
+  "totalLabel": "Final amount",
+  "currencySuffix": "Toman",
+  "namePlaceholder": "Full name",
+  "phonePlaceholder": "09121234567",
+  "submitCta": "Have an advisor call me with this quote",
+  "successTitle": "Your request is in",
+  "successBody": "One of Malibaan's advisors will call you with your prepared quote within one business day."
+}

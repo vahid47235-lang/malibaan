@@ -1,0 +1,77 @@
+{
+  "siteName": "Malibaan",
+  "brandTagline": "Smart accounting for growing businesses",
+  "nav": {
+    "services": "Services",
+    "calculator": "Cost Calculator",
+    "about": "About",
+    "clients": "Clients",
+    "blog": "Blog",
+    "contact": "Contact",
+    "ctaConsultation": "Book a Free Consultation",
+    "homeAriaLabel": "Malibaan, home",
+    "mainMenuAriaLabel": "Main menu",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu"
+  },
+  "footer": {
+    "description": "Accounting, tax, and social-insurance advisors for Iranian businesses — with the transparency, precision, and independence every business deserves.",
+    "pagesHeading": "Pages",
+    "servicesHeading": "Services",
+    "contactHeading": "Contact",
+    "addressLine": "Malibaan Building, Vali-e-Asr Street, Tehran, Iran",
+    "rightsReserved": "Malibaan. All rights reserved.",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service",
+    "socialInstagram": "Instagram",
+    "socialTelegram": "Telegram"
+  },
+  "languageSwitcher": {
+    "label": "Language",
+    "switchTo": "Switch language to"
+  },
+  "buttons": {
+    "callUs": "Call Us",
+    "whatsappMessage": "Message on WhatsApp",
+    "submitting": "Sending...",
+    "readMore": "Read more",
+    "viewAll": "View all services",
+    "backToHome": "Back to homepage",
+    "contactUs": "Contact us"
+  },
+  "breadcrumbs": {
+    "home": "Home",
+    "services": "Services",
+    "blog": "Blog",
+    "navAriaLabel": "Breadcrumb"
+  },
+  "forms": {
+    "fullName": "Full name",
+    "fullNamePlaceholder": "e.g. Ali Rezaei",
+    "phone": "Mobile number",
+    "phonePlaceholder": "09121234567",
+    "messageOptional": "Briefly, what do you need? (optional)",
+    "messagePlaceholder": "What does your business need help with?",
+    "messagePlaceholderWithService": "My question is about \"{service}\"...",
+    "submit": "Request a Consultation",
+    "submitting": "Sending...",
+    "successTitle": "Your request is in",
+    "successBody": "One of Malibaan's advisors will reach out within one business day.",
+    "errorGeneric": "Something went wrong sending your request. Please try again or message us on WhatsApp.",
+    "errorNameTooShort": "Please enter your full name.",
+    "errorPhoneInvalid": "That mobile number doesn't look right. Example: 09121234567",
+    "close": "Close"
+  },
+  "whatsapp": {
+    "ariaLabel": "Chat on WhatsApp"
+  },
+  "notFound": {
+    "eyebrow": "404",
+    "title": "We couldn't find that page",
+    "description": "The address may be mistyped, or the page may have moved. Use the links below to keep going, or reach out to us directly.",
+    "popularPages": "Popular pages",
+    "ourServices": "Malibaan services",
+    "metaTitle": "Page Not Found"
+  },
+  "loading": "Loading..."
+}

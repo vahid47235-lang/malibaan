@@ -1,24 +1,28 @@
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
 import { Container } from "@/components/ui/container";
 import { Logo } from "@/components/ui/logo";
 import { Button } from "@/components/ui/button";
-import { mainNav } from "@/lib/nav";
-import { toPersianDigits } from "@/lib/utils";
+import { Link } from "@/components/i18n/link";
+import { LanguageSwitcher } from "@/components/i18n/language-switcher";
+import { getMainNav } from "@/lib/nav";
+import type { CommonDictionary } from "@/i18n/dictionary-types";
+import type { Locale } from "@/i18n/config";
+import { formatNumber } from "@/i18n/format";
 
-export function Header() {
+export function Header({ locale, dict }: { locale: Locale; dict: CommonDictionary }) {
   const [open, setOpen] = useState(false);
+  const mainNav = getMainNav(dict);
 
   return (
     <header className="sticky top-0 z-50 border-b border-brand-line/70 bg-brand-cream-50/85 backdrop-blur-md">
       <Container className="flex h-18 items-center justify-between py-3">
-        <Link href="/" aria-label="مالی‌بان، صفحه اصلی">
-          <Logo />
+        <Link href="/" aria-label={dict.nav.homeAriaLabel}>
+          <Logo locale={locale} />
         </Link>
 
-        <nav className="hidden items-center gap-8 lg:flex" aria-label="منوی اصلی">
+        <nav className="hidden items-center gap-8 lg:flex" aria-label={dict.nav.mainMenuAriaLabel}>
           {mainNav.map((item) => (
             <Link
               key={item.href}
@@ -31,22 +35,23 @@ export function Header() {
         </nav>
 
         <div className="hidden items-center gap-3 lg:flex">
+          <LanguageSwitcher label={dict.languageSwitcher.label} switchToLabel={dict.languageSwitcher.switchTo} />
           <a
             href="tel:+989900035009"
             className="text-sm font-medium text-brand-ink-600 hover:text-brand-green-900"
             dir="ltr"
           >
-            {toPersianDigits("0990-003-5009")}
+            {formatNumber("0990-003-5009", locale)}
           </a>
           <Button href="/consultation" size="sm">
-            درخواست مشاوره رایگان
+            {dict.nav.ctaConsultation}
           </Button>
         </div>
 
         <button
           className="grid h-10 w-10 place-items-center rounded-full border border-brand-line lg:hidden"
           onClick={() => setOpen((v) => !v)}
-          aria-label="باز کردن منو"
+          aria-label={open ? dict.nav.closeMenu : dict.nav.openMenu}
           aria-expanded={open}
         >
           <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
@@ -72,9 +77,14 @@ export function Header() {
                 {item.label}
               </Link>
             ))}
-            <div className="mt-2 flex items-center gap-3 px-3">
+            <div className="mt-2 flex flex-col items-stretch gap-3 px-3">
+              <LanguageSwitcher
+                label={dict.languageSwitcher.label}
+                switchToLabel={dict.languageSwitcher.switchTo}
+                variant="mobile"
+              />
               <Button href="/consultation" size="sm" className="w-full">
-                درخواست مشاوره رایگان
+                {dict.nav.ctaConsultation}
               </Button>
             </div>
           </Container>

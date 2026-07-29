@@ -1,0 +1,97 @@
+{
+  "updatedLabel": "Last updated:",
+  "privacy": {
+    "title": "Privacy Policy",
+    "description": "Malibaan's privacy policy — what information we collect from clients and site visitors, how it's used and retained, and what rights you have.",
+    "heading": "Malibaan Privacy Policy",
+    "description2": "Transparency isn't just something we apply to financial reports — it governs how we handle your information too.",
+    "updated": "2026-07-27",
+    "sections": [
+      {
+        "heading": "1. Introduction",
+        "paragraphs": ["Malibaan takes the privacy of our clients and website visitors seriously. This policy explains what information we collect from you, why we collect it, and how it's protected. By using malibaan.com or submitting any of its forms, you agree to this policy."]
+      },
+      {
+        "heading": "2. What We Collect",
+        "paragraphs": ["Two main categories of information are collected through the website and through working with Malibaan:"],
+        "list": [
+          "Initial contact details: your name, mobile number, and a brief note about your needs, submitted through our \"Contact Us\" or \"Free Consultation\" forms.",
+          "Financial and administrative information: once a formal engagement begins, the documents and information needed to deliver accounting, tax, insurance, or registration services, provided directly by you or your business's representative."
+        ]
+      },
+      {
+        "heading": "3. How We Use Your Information",
+        "paragraphs": ["Your contact details are used only to respond to consultation requests and schedule sessions. Financial and administrative information from contracted clients is used exclusively to deliver the services agreed upon. Malibaan does not use your information for unsolicited advertising or mass SMS/email campaigns."]
+      },
+      {
+        "heading": "4. Data Retention & Security",
+        "paragraphs": ["Access to each client's financial file is limited to the expert or team responsible for that file. Information is kept in internal systems with controlled access, and we apply reasonable security measures to prevent unauthorized access, disclosure, or use."]
+      },
+      {
+        "heading": "5. Sharing Information with Third Parties",
+        "paragraphs": ["Malibaan does not sell client information to third parties or make it available for advertising purposes. The one exception is providing documents to official bodies (such as the tax authority or the social security organization) as required to fulfill that business's legal obligations, and with the client's knowledge."]
+      },
+      {
+        "heading": "6. Cookies",
+        "paragraphs": ["The Malibaan website may use technically necessary cookies to ensure pages function correctly. These cookies do not collect personally identifiable information and are used only to improve your browsing experience."]
+      },
+      {
+        "heading": "7. Your Rights",
+        "paragraphs": ["You may request at any time that the contact information we hold about you be corrected or deleted. Simply reach out through any of the contact channels below."]
+      },
+      {
+        "heading": "8. Changes to This Policy",
+        "paragraphs": ["This policy may be updated from time to time. The date of the most recent update is shown at the top of this page."]
+      },
+      {
+        "heading": "9. Contact Us",
+        "paragraphs": ["For any questions about this privacy policy, reach us at info@malibaan.com or +98 990-003-5009."]
+      }
+    ]
+  },
+  "terms": {
+    "title": "Terms of Service",
+    "description": "Malibaan's terms of service — the nature of our services, the obligations of both parties, limitation of liability, and content ownership.",
+    "heading": "Terms of Service for Malibaan's Services",
+    "description2": "Reading these terms should be as clear and unambiguous as the transparency we bring to financial reporting.",
+    "updated": "2026-07-27",
+    "sections": [
+      {
+        "heading": "1. Acceptance of Terms",
+        "paragraphs": ["Using malibaan.com or requesting any of Malibaan's services constitutes acceptance of these terms. If you disagree with any part of these terms, please raise it with our team before using our services."]
+      },
+      {
+        "heading": "2. Nature of Services",
+        "paragraphs": ["Malibaan provides advisory and execution services in accounting, tax, social insurance, and company registration. These services do not replace formal legal counsel from a licensed attorney, except where explicitly stated in an engagement agreement."]
+      },
+      {
+        "heading": "3. Malibaan's Obligations",
+        "paragraphs": ["Malibaan commits to performing services with professional care, in accordance with current laws and regulations, within the agreed timeframe, and to maintaining full confidentiality of clients' financial and administrative information."]
+      },
+      {
+        "heading": "4. Client Obligations",
+        "paragraphs": ["The client commits to providing accurate, complete information and documents needed for the services in a timely manner. Delays or gaps in documentation may affect the timeline or outcome of services (such as penalties from late tax filings), and responsibility for that rests with the client."]
+      },
+      {
+        "heading": "5. Limitation of Liability",
+        "paragraphs": ["Malibaan provides advice and services based on our best professional judgment, but final management and financial decisions remain the client's responsibility. Likewise, the final outcome of certain administrative or quasi-judicial processes (such as a ruling from a tax or insurance dispute-resolution board) is outside Malibaan's direct control, though our team stands with the client through every stage of these processes."]
+      },
+      {
+        "heading": "6. Content Ownership",
+        "paragraphs": ["All content on this website, including text, blog posts, design, and the \"Malibaan\" brand, belongs to Malibaan. Use, copying, or republishing of this content without written permission is not allowed."]
+      },
+      {
+        "heading": "7. Changes to These Terms",
+        "paragraphs": ["These terms may be updated from time to time. The current version is always available on this page."]
+      },
+      {
+        "heading": "8. Governing Law",
+        "paragraphs": ["These terms, and any engagement agreement with Malibaan, are governed by the laws of the Islamic Republic of Iran."]
+      },
+      {
+        "heading": "9. Contact Us",
+        "paragraphs": ["For any questions about these terms of service, reach us at info@malibaan.com or +98 990-003-5009."]
+      }
+    ]
+  }
+}

@@ -1,7 +1,8 @@
 import { Container } from "@/components/ui/container";
 import { Button } from "@/components/ui/button";
+import type { HomeDictionary } from "@/i18n/dictionary-types";
 
-export function CtaBanner() {
+export function CtaBanner({ dict }: { dict: HomeDictionary["ctaBanner"] }) {
   return (
     <section className="py-20 sm:py-24">
       <Container>
@@ -15,18 +16,15 @@ export function CtaBanner() {
           />
           <div className="relative">
             <h2 className="mx-auto max-w-2xl text-3xl font-bold leading-tight text-white sm:text-4xl">
-              وقت آن رسیده مسیر مالی کسب‌وکارتان را روشن کنید
+              {dict.title}
             </h2>
-            <p className="mx-auto mt-4 max-w-xl text-lg leading-8 text-white/70">
-              در یک جلسه ۳۰ دقیقه‌ای رایگان، وضعیت مالی و مالیاتی کسب‌وکارتان را
-              با یکی از کارشناسان مالی‌بان بررسی کنید.
-            </p>
+            <p className="mx-auto mt-4 max-w-xl text-lg leading-8 text-white/70">{dict.description}</p>
             <div className="mt-9 flex flex-wrap items-center justify-center gap-4">
               <Button href="/consultation" variant="mint" size="lg">
-                رزرو مشاوره رایگان
+                {dict.primaryCta}
               </Button>
               <Button href="/contact" variant="ghost" size="lg" className="text-white hover:bg-white/10">
-                تماس با ما
+                {dict.secondaryCta}
               </Button>
             </div>
           </div>

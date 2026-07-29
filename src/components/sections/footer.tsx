@@ -1,24 +1,28 @@
-import Link from "next/link";
 import { Container } from "@/components/ui/container";
 import { Logo } from "@/components/ui/logo";
-import { mainNav, serviceLinks } from "@/lib/nav";
-import { toPersianDigits } from "@/lib/utils";
+import { Link } from "@/components/i18n/link";
+import { getMainNav, getServiceLinks } from "@/lib/nav";
+import { getServices } from "@/lib/data/services";
+import type { CommonDictionary } from "@/i18n/dictionary-types";
+import type { Locale } from "@/i18n/config";
+import { formatNumber } from "@/i18n/format";
 
-const social = [
-  { label: "اینستاگرام", href: "https://instagram.com/malibaan" },
-  { label: "تلگرام", href: "https://t.me/malibaan" },
-];
+export function Footer({ locale, dict }: { locale: Locale; dict: CommonDictionary }) {
+  const mainNav = getMainNav(dict);
+  const serviceLinks = getServiceLinks(getServices(locale));
+  const social = [
+    { label: dict.footer.socialInstagram, href: "https://instagram.com/malibaan" },
+    { label: dict.footer.socialTelegram, href: "https://t.me/malibaan" },
+  ];
 
-export function Footer() {
   return (
     <footer className="border-t border-brand-line bg-white">
       <Container className="py-16">
         <div className="grid gap-12 lg:grid-cols-[1.2fr_1fr_1fr_1fr]">
           <div>
-            <Logo />
+            <Logo locale={locale} />
             <p className="mt-5 max-w-xs text-[15px] leading-7 text-brand-ink-600">
-              مشاور حسابداری، مالیاتی و بیمه‌ای برای کسب‌وکارهای ایرانی؛ با
-              شفافیت، دقت و استقلالی که هر کسب‌وکار سزاوار آن است.
+              {dict.footer.description}
             </p>
             <div className="mt-6 flex gap-3">
               {social.map((item) => (
@@ -34,7 +38,7 @@ export function Footer() {
           </div>
 
           <div>
-            <h3 className="text-sm font-bold text-brand-ink-900">صفحات</h3>
+            <h3 className="text-sm font-bold text-brand-ink-900">{dict.footer.pagesHeading}</h3>
             <ul className="mt-4 flex flex-col gap-3">
               {mainNav.map((item) => (
                 <li key={item.href}>
@@ -47,7 +51,7 @@ export function Footer() {
           </div>
 
           <div>
-            <h3 className="text-sm font-bold text-brand-ink-900">خدمات</h3>
+            <h3 className="text-sm font-bold text-brand-ink-900">{dict.footer.servicesHeading}</h3>
             <ul className="mt-4 flex flex-col gap-3">
               {serviceLinks.map((item) => (
                 <li key={item.href}>
@@ -60,11 +64,11 @@ export function Footer() {
           </div>
 
           <div>
-            <h3 className="text-sm font-bold text-brand-ink-900">تماس با ما</h3>
+            <h3 className="text-sm font-bold text-brand-ink-900">{dict.footer.contactHeading}</h3>
             <ul className="mt-4 flex flex-col gap-3 text-sm text-brand-ink-600">
               <li dir="ltr">
                 <a href="tel:+989900035009" className="hover:text-brand-green-900">
-                  {toPersianDigits("0990-003-5009")}
+                  {formatNumber("0990-003-5009", locale)}
                 </a>
               </li>
               <li dir="ltr">
@@ -72,19 +76,19 @@ export function Footer() {
                   info@malibaan.com
                 </a>
               </li>
-              <li>تهران، خیابان ولیعصر، ساختمان مالی‌بان</li>
+              <li>{dict.footer.addressLine}</li>
             </ul>
           </div>
         </div>
 
         <div className="mt-14 flex flex-col gap-4 border-t border-brand-line pt-8 text-sm text-brand-ink-400 sm:flex-row sm:items-center sm:justify-between">
-          <p>© {toPersianDigits(new Date().getFullYear())} مالی‌بان. تمامی حقوق محفوظ است.</p>
+          <p>© {formatNumber(new Date().getFullYear(), locale)} {dict.footer.rightsReserved}</p>
           <div className="flex gap-6">
             <Link href="/privacy" className="hover:text-brand-green-900">
-              حریم خصوصی
+              {dict.footer.privacy}
             </Link>
             <Link href="/terms" className="hover:text-brand-green-900">
-              قوانین و مقررات
+              {dict.footer.terms}
             </Link>
           </div>
         </div>

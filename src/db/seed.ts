@@ -1,7 +1,7 @@
 import { drizzle } from "drizzle-orm/postgres-js";
 import postgres from "postgres";
 import * as schema from "./schema";
-import { services as serviceGroups } from "../lib/services-data";
+import { services as serviceGroups } from "../lib/data/services.fa";
 import { hashPassword, generateRandomPassword } from "../lib/admin/password";
 
 const PLACEHOLDER_PRICE_TOMAN = 3_000_000;

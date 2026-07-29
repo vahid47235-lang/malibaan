@@ -1,0 +1,27 @@
+{
+  "meta": {
+    "title": "Contact Us",
+    "description": "How to reach Malibaan — phone, WhatsApp, email, and our office address. Fill in the consultation form and one of our advisors will get back to you shortly.",
+    "ogTitle": "Contact Malibaan",
+    "ogDescription": "How to reach Malibaan's accounting, tax, and insurance advisory team."
+  },
+  "breadcrumb": "Contact",
+  "pageHeader": {
+    "eyebrow": "Contact Us",
+    "title": "Pick whichever way works best for you",
+    "description": "Phone, WhatsApp, or the consultation form below — every path reaches a real advisor, not an automated reply."
+  },
+  "channels": [
+    { "title": "Phone", "value": "+98 990-003-5009" },
+    { "title": "WhatsApp", "value": "Message on WhatsApp" },
+    { "title": "Telegram", "value": "@malibaan" },
+    { "title": "Instagram", "value": "@malibaan" },
+    { "title": "Email", "value": "info@malibaan.com" },
+    { "title": "Business Hours", "value": "Saturday–Wednesday, 9am–6pm (Iran Time)" }
+  ],
+  "addressTitle": "Office Address",
+  "addressValue": "Malibaan Building, Vali-e-Asr Street, Tehran, Iran",
+  "mapCta": "Get directions on Google Maps",
+  "formHeading": "Free Consultation Request Form",
+  "formDescription": "Share your name, phone number, and a brief note about what you need — we'll reach out within one business day."
+}

@@ -1,0 +1,48 @@
+{
+  "meta": {
+    "title": "Our Clients",
+    "description": "From startups to manufacturing and trading companies, Iranian businesses trust Malibaan with their accounting, tax, and insurance — see the industries we serve and what clients say.",
+    "ogTitle": "Malibaan Clients",
+    "ogDescription": "The industries and businesses that work with Malibaan."
+  },
+  "breadcrumb": "Clients",
+  "pageHeader": {
+    "eyebrow": "Malibaan Clients",
+    "title": "Businesses that trust us with their finances",
+    "description": "From growing startups to large manufacturing and trading companies — in every industry, one named expert knows the client's financial and tax file."
+  },
+  "industriesHeading": { "eyebrow": "Industries We Serve", "title": "Where we've done the most work" },
+  "testimonialsHeading": { "eyebrow": "Client Trust", "title": "What businesses working with us have to say" },
+  "testimonials": [
+    {
+      "quote": "After years of working with different accountants, Malibaan was the first team whose reports I actually understood. I make financial decisions with a lot more confidence now.",
+      "name": "CEO",
+      "context": "Industrial parts manufacturer"
+    },
+    {
+      "quote": "During a tax audit, Malibaan's team stood by us and defended the case with precise documentation. The penalty we were bracing for never happened.",
+      "name": "CFO",
+      "context": "Import & distribution company"
+    },
+    {
+      "quote": "Getting onto the tax authority's e-invoicing system seemed complicated. Malibaan rolled out the entire process in under two weeks without a single disruption to our sales.",
+      "name": "Founder",
+      "context": "E-commerce store"
+    },
+    {
+      "quote": "As our team grew, payroll and social-insurance filings got complicated fast. Malibaan set up a monthly process that's never once been late or wrong since.",
+      "name": "HR Manager",
+      "context": "Construction contracting firm"
+    },
+    {
+      "quote": "We needed a credible audit to raise capital. Malibaan's team coordinated the entire path, from preparing documents to the final meeting with the independent auditor.",
+      "name": "CEO",
+      "context": "Holding company raising capital"
+    },
+    {
+      "quote": "As a startup, we didn't know where to start. From the very first meeting, Malibaan mapped out our company registration and the right tax structure.",
+      "name": "Co-founder",
+      "context": "Tech startup"
+    }
+  ]
+}

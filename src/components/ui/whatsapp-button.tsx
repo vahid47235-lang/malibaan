@@ -1,10 +1,12 @@
-export function WhatsAppButton() {
+import type { CommonDictionary } from "@/i18n/dictionary-types";
+
+export function WhatsAppButton({ dict }: { dict: CommonDictionary }) {
   return (
     <a
       href="https://wa.me/989900035009"
       target="_blank"
       rel="noopener noreferrer"
-      aria-label="گفتگو در واتساپ"
+      aria-label={dict.whatsapp.ariaLabel}
       className="fixed bottom-6 start-6 z-40 grid h-14 w-14 place-items-center rounded-full bg-[#25D366] shadow-lg shadow-black/15 transition-transform hover:scale-105"
     >
       <svg width="28" height="28" viewBox="0 0 24 24" fill="none">

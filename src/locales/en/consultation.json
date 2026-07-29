@@ -1,0 +1,72 @@
+{
+  "meta": {
+    "title": "Book a Free Consultation",
+    "description": "Book a free 30-minute consultation with Malibaan's advisors to review your business's accounting, tax, and insurance standing — no obligation.",
+    "ogTitle": "Book a Free Consultation with Malibaan",
+    "ogDescription": "A free 30-minute session to review your business's financial and tax standing."
+  },
+  "breadcrumb": "Free Consultation",
+  "pageHeader": {
+    "eyebrow": "Free, No-Obligation Consultation",
+    "title": "30 minutes that bring clarity to your business's finances",
+    "description": "Fill in the form below and a Malibaan advisor will reach out to schedule a free consultation about your business's accounting, tax, and insurance standing."
+  },
+  "expectationsHeading": { "eyebrow": "What Happens in This Session", "title": "An honest assessment, not a sales pitch" },
+  "benefits": [
+    {
+      "title": "An impartial review of where you stand",
+      "description": "We go through your books, filings, and current insurance lists to spot risks and opportunities to fix things."
+    },
+    {
+      "title": "Spotting tax and insurance risk early",
+      "description": "If a penalty or audit is coming, it can usually be seen ahead of time. This first session surfaces the key warning signs."
+    },
+    {
+      "title": "A practical next step, not a sales pitch",
+      "description": "If your need can be solved with a small internal fix, that's what we'll suggest — not necessarily a long-term engagement."
+    }
+  ],
+  "stepsHeading": "After You Submit the Form",
+  "stepsTitle": "Three simple steps from form to session",
+  "steps": [
+    {
+      "title": "Fill in the form",
+      "description": "Your name, phone number, and a brief note about your business's needs — under two minutes."
+    },
+    {
+      "title": "An advisor calls within one business day",
+      "description": "A Malibaan advisor reaches out to schedule the time and format (in person or online) that works for you."
+    },
+    {
+      "title": "Your free 30-minute session",
+      "description": "In a direct, no-obligation conversation, we review your situation and hand you a suggested path forward."
+    }
+  ],
+  "directContactHeading": "Or reach us directly",
+  "directContactDescription": "If you'd rather skip the form, you can request your free consultation through any of the channels below.",
+  "phoneValue": "+98 990-003-5009",
+  "whatsappValue": "Message on WhatsApp",
+  "formHeading": "Free Consultation Booking Form",
+  "formDescription": "Share your name, phone number, and a brief note about what you need — we'll reach out within one business day.",
+  "formServiceLabel": "Free Consultation",
+  "faqHeading": "Questions people ask before booking",
+  "faqEyebrow": "Frequently Asked Questions",
+  "faq": [
+    {
+      "question": "Is this consultation really free?",
+      "answer": "Yes. The first consultation is free for every business and carries no obligation to continue working with us. Its purpose is to understand your needs and give you an honest assessment."
+    },
+    {
+      "question": "How long does it take, and how is it held?",
+      "answer": "Usually around 30 minutes — in person at Malibaan's office in Tehran, or online (by phone or video call), whichever works better for you."
+    },
+    {
+      "question": "What documents do I need to bring?",
+      "answer": "Nothing specific is required. If you have your latest tax return, accounting books, or insurance lists handy, bring them along — but not having them won't stop the session from happening."
+    },
+    {
+      "question": "Am I obligated to work with you after the session?",
+      "answer": "No. At the end of the session you'll get a summary and a suggested path forward, and the decision to continue — or not — is entirely yours."
+    }
+  ]
+}

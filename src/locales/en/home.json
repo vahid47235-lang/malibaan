@@ -1,0 +1,122 @@
+{
+  "meta": {
+    "title": "Malibaan | Smart Accounting for Growing Businesses",
+    "description": "Malibaan is an accounting, tax, and insurance advisory for Iranian businesses — from company registration to independent audit, delivered with the clarity and precision your business deserves.",
+    "ogDescription": "Accounting, tax, and social-insurance advisors for Iranian businesses. Clarity, precision, and independence in every report."
+  },
+  "hero": {
+    "eyebrow": "Licensed Accounting, Tax & Insurance Advisory",
+    "title": "Give your business's finances a path that's",
+    "highlight": "clear, precise, and defensible",
+    "titleSuffix": "",
+    "description": "Malibaan stands alongside owners and managers so accounting, tax, and insurance stop being a daily worry — with transparent reporting, independent advice, and a team that can account for every figure in your books.",
+    "ctaPrimary": "Book a Free Consultation",
+    "ctaSecondary": "Explore Services",
+    "trustLineValue": "98%",
+    "trustLineLabel": "of clients trust the accuracy of our financial reporting"
+  },
+  "stats": [
+    { "value": "12+", "label": "years in practice" },
+    { "value": "200+", "label": "active businesses" },
+    { "value": "4,000+", "label": "tax filings submitted" },
+    { "value": "24/7", "label": "responsive to employers" }
+  ],
+  "trustPoints": [
+    "12+ years of hands-on accounting and tax experience",
+    "Trusted by 200+ Iranian businesses",
+    "A real advisor answers, not an automated help desk"
+  ],
+  "servicesGrid": {
+    "eyebrow": "Malibaan Services",
+    "title": "Everything your business needs for financial health",
+    "description": "From incorporation to your annual audit — one team, accountable for every financial, tax, and insurance process along the way.",
+    "detailCta": "Service details",
+    "items": [
+      {
+        "title": "Accounting & Bookkeeping",
+        "description": "Standardized chart of accounts, disciplined daily entries, and precise periodic reports — so you always know exactly where your business stands financially.",
+        "slug": "accounting"
+      },
+      {
+        "title": "Tax Advisory",
+        "description": "Accurate tax return filing, representation before tax tribunals, and legitimate planning to reduce your tax burden and avoid penalties.",
+        "slug": "tax-consulting"
+      },
+      {
+        "title": "E-Invoicing & VAT",
+        "description": "Registration, compliant e-invoice issuance, and full alignment with Iran's taxpayer e-invoicing system — without the constant fear of fines.",
+        "slug": "vat"
+      },
+      {
+        "title": "Payroll & Social Insurance",
+        "description": "Precise payroll calculations, monthly social security filings, and settlement clearances — on time, every month, without errors.",
+        "slug": "payroll"
+      },
+      {
+        "title": "Audit & Internal Controls",
+        "description": "Audit reports banks and tax authorities accept, paired with the internal controls your business needs to grow sustainably.",
+        "slug": "audit"
+      },
+      {
+        "title": "Company & Trademark Registration",
+        "description": "From choosing the right company type to the official gazette filing and trademark registration — we manage every legal step of getting your business off the ground.",
+        "slug": "company-registration"
+      }
+    ]
+  },
+  "whyUs": {
+    "eyebrow": "Why Malibaan",
+    "title": "The shield we built is here to defend your business",
+    "description": "Malibaan was founded on a simple belief: financial fairness is every business's right. That belief still shapes how we work with every client today.",
+    "items": [
+      {
+        "title": "Transparency in every report",
+        "description": "No number reaches you unexplained. Every financial report is walked through in plain language — not just handed over as a spreadsheet."
+      },
+      {
+        "title": "Professional independence",
+        "description": "Our advice serves your business's long-term interest, not upselling more services — exactly as we've shown in high-stakes tax decisions."
+      },
+      {
+        "title": "One dedicated expert, not a support queue",
+        "description": "Every business is assigned one named expert who knows your file from day one through today."
+      },
+      {
+        "title": "Defense before tax and insurance authorities",
+        "description": "If an audit or dispute comes up, our team stands with you before the review boards and defends your case."
+      }
+    ]
+  },
+  "process": {
+    "eyebrow": "How We Work Together",
+    "title": "From the first meeting to your monthly report — a clear path",
+    "steps": [
+      {
+        "title": "Initial consultation & business review",
+        "description": "In one free session, we review your current financial standing and your growth goals."
+      },
+      {
+        "title": "Analysis & financial roadmap",
+        "description": "Based on your industry, we design the right accounting, tax, and insurance structure for you."
+      },
+      {
+        "title": "Execution by a dedicated expert",
+        "description": "One named expert takes ownership of running every financial process accurately and on time."
+      },
+      {
+        "title": "Transparent, ongoing reporting",
+        "description": "Every month, you get a clear picture of your business's financial, tax, and insurance standing."
+      }
+    ]
+  },
+  "testimonials": {
+    "eyebrow": "Client Trust",
+    "title": "What businesses working with us have to say"
+  },
+  "ctaBanner": {
+    "title": "It's time to bring clarity to your business's finances",
+    "description": "In one free 30-minute session, review your business's financial and tax standing with a Malibaan advisor.",
+    "primaryCta": "Book a Free Consultation",
+    "secondaryCta": "Contact Us"
+  }
+}

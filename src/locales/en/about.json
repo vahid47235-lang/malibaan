@@ -1,0 +1,69 @@
+{
+  "meta": {
+    "title": "About Us",
+    "description": "Malibaan is an accounting, tax, and social-insurance advisory standing alongside Iranian businesses — with transparency, professional independence, and a named expert who actually answers.",
+    "ogTitle": "About Malibaan",
+    "ogDescription": "An accounting, tax, and social-insurance advisory for Iranian businesses."
+  },
+  "breadcrumb": "About",
+  "pageHeader": {
+    "eyebrow": "About Malibaan",
+    "title": "An advisor who sits at your table, not behind a counter",
+    "description": "Malibaan was built on a simple belief: every Iranian business, regardless of size, deserves financial advice that's precise, transparent, and independent."
+  },
+  "story": {
+    "eyebrow": "Our Story",
+    "title": "From a small accounting practice to the financial partner of hundreds of businesses",
+    "paragraphs": [
+      "Malibaan started out advising a handful of small businesses — businesses worn down by scattered bookkeepers, inconsistent reports, and tax and insurance penalties that seemed to come out of nowhere. Their problem was always the same: no single, accountable team taking ownership of the whole financial cycle.",
+      "Today that practice has grown into a team of accountants, tax advisors, and social-insurance specialists who build one clear financial path for clients — from the day a company is registered through its annual audit. Malibaan has always grown through referrals from satisfied clients, never expensive advertising, and that's kept our priority clear: the quality of the work, not the number of files."
+    ],
+    "imageAlt": "The Malibaan mark",
+    "imageQuote": "Clarity, expertise, and a new standard for accounting."
+  },
+  "values": {
+    "eyebrow": "How We Work",
+    "title": "Four principles we never trade away under deadline pressure",
+    "items": [
+      {
+        "title": "Clarity over complexity",
+        "description": "Every financial report is explained in plain language — not just handed over as a spreadsheet only an accountant can read."
+      },
+      {
+        "title": "Professional independence",
+        "description": "Our advice serves your business's long-term interest, even when that means recommending fewer services, not more."
+      },
+      {
+        "title": "A name behind every answer, not a queue",
+        "description": "Every business is assigned one named expert who has known your file since day one."
+      },
+      {
+        "title": "Precision that holds up under scrutiny",
+        "description": "We prepare documents and reports so they stand up without worry to a tax audit, an insurance review, or an independent auditor."
+      }
+    ]
+  },
+  "team": {
+    "eyebrow": "The Malibaan Team",
+    "title": "Experts who actually know your file",
+    "description": "Our team is made up of accountants and tax advisors with years of hands-on experience across industries, and for more complex cases we work alongside certified court experts and independent auditors.",
+    "roles": [
+      {
+        "title": "Accounting & bookkeeping specialists",
+        "description": "Own document entry, chart-of-accounts coding, and periodic financial reporting."
+      },
+      {
+        "title": "Tax & insurance advisors",
+        "description": "Handle tax return filing, social-insurance lists, and representation before review boards."
+      },
+      {
+        "title": "Company & trademark registration specialists",
+        "description": "Manage the legal process of incorporation, amendments, and IP registration."
+      },
+      {
+        "title": "Independent audit partners",
+        "description": "Work alongside your team on audit and internal-control engagements."
+      }
+    ]
+  }
+}

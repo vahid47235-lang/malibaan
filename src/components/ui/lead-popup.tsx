@@ -2,6 +2,8 @@
 
 import { useEffect, useState, type FormEvent } from "react";
 import { usePathname } from "next/navigation";
+import type { CommonDictionary } from "@/i18n/dictionary-types";
+import type { Locale } from "@/i18n/config";
 
 type Variant = {
   key: string;
@@ -13,7 +15,7 @@ type Variant = {
 
 const SESSION_FLAG = "malibaan_popup_shown";
 
-export function LeadPopup() {
+export function LeadPopup({ dict }: { dict: CommonDictionary; locale: Locale }) {
   const pathname = usePathname();
   const isAdminRoute = pathname?.startsWith("/admin");
   const [variant, setVariant] = useState<Variant | null>(null);
@@ -72,7 +74,7 @@ export function LeadPopup() {
         <button
           type="button"
           onClick={() => setVisible(false)}
-          aria-label="بستن"
+          aria-label={dict.forms.close}
           className="float-left text-brand-ink-400 hover:text-brand-ink-900"
         >
           ✕
@@ -80,8 +82,8 @@ export function LeadPopup() {
 
         {status === "success" ? (
           <div className="pt-4 text-center">
-            <p className="text-lg font-bold text-brand-green-900">ثبت شد</p>
-            <p className="mt-2 text-sm text-brand-ink-600">به‌زودی با شما تماس می‌گیریم.</p>
+            <p className="text-lg font-bold text-brand-green-900">{dict.forms.successTitle}</p>
+            <p className="mt-2 text-sm text-brand-ink-600">{dict.forms.successBody}</p>
           </div>
         ) : (
           <>
@@ -93,19 +95,19 @@ export function LeadPopup() {
                 onChange={(e) => setPhone(e.target.value)}
                 type="tel"
                 dir="ltr"
-                placeholder="09121234567"
+                placeholder={dict.forms.phonePlaceholder}
                 required
                 className="rounded-lg border border-brand-line px-3 py-2.5 text-sm outline-none focus:border-brand-green-900/50"
               />
               {status === "error" && (
-                <p className="text-xs text-red-600">شماره موبایل معتبر نیست. مثال: 09121234567</p>
+                <p className="text-xs text-red-600">{dict.forms.errorPhoneInvalid}</p>
               )}
               <button
                 type="submit"
                 disabled={status === "submitting"}
                 className="rounded-full bg-brand-green-900 px-5 py-2.5 text-sm font-medium text-white hover:bg-brand-green-800 disabled:opacity-60"
               >
-                {status === "submitting" ? "در حال ارسال..." : variant.ctaLabel}
+                {status === "submitting" ? dict.forms.submitting : variant.ctaLabel}
               </button>
             </form>
           </>

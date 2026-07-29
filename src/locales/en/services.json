@@ -1,0 +1,30 @@
+{
+  "listMeta": {
+    "title": "Services",
+    "description": "Malibaan's accounting, tax, insurance, and registration services for Iranian businesses — from company registration to independent audit, with one team and one dedicated expert.",
+    "ogTitle": "Malibaan Services",
+    "ogDescription": "Malibaan's accounting, tax, insurance, and registration services for Iranian businesses."
+  },
+  "listBreadcrumb": "Services",
+  "listPageHeader": {
+    "eyebrow": "Malibaan Services",
+    "title": "Accounting, tax, and insurance services for every stage of growth",
+    "description": "From incorporation to your annual audit — every service comes with a dedicated expert, a transparent process, and reporting that holds up before tax and insurance authorities."
+  },
+  "detailCta": "Service details",
+  "notListedHeading": "Didn't find what you're looking for?",
+  "notListedDescription": "Beyond the services above, Malibaan also advises businesses on more specialized areas like meeting-minute filings, capital increases, HR, and accounting software rollouts. Just get in touch and we'll review exactly what you need.",
+  "detailBreadcrumbServices": "Services",
+  "benefitsHeading": { "eyebrow": "Why Get This From Malibaan", "title": "Advantages that make a real difference" },
+  "offeringsHeading": { "eyebrow": "Scope of Work", "titleTemplate": "What's covered under \"{service}\"" },
+  "problemsHeading": { "eyebrow": "Problems We Solve", "title": "If any of this sounds familiar, you're in the right place" },
+  "processHeading": { "eyebrow": "How It Works", "title": "A clear path, step by step" },
+  "industriesHeading": { "eyebrow": "Who This Is For", "title": "Industries we work with most in this area" },
+  "faqHeadingTemplate": "Questions people ask about \"{service}\"",
+  "faqEyebrow": "Frequently Asked Questions",
+  "relatedHeading": "Related Services",
+  "leadFormTitleTemplate": "Talk to an expert about \"{service}\"",
+  "leadFormDescription": "Fill in the form and we'll reach out as soon as possible, or contact us directly by WhatsApp or phone.",
+  "callCta": "Call Us",
+  "whatsappCta": "Message on WhatsApp"
+}

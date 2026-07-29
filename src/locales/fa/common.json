@@ -1,0 +1,77 @@
+{
+  "siteName": "مالی‌بان",
+  "brandTagline": "حسابداری هوشمند برای رشد",
+  "nav": {
+    "services": "خدمات",
+    "calculator": "ماشین‌حساب هزینه",
+    "about": "درباره ما",
+    "clients": "مشتریان",
+    "blog": "وبلاگ",
+    "contact": "تماس با ما",
+    "ctaConsultation": "درخواست مشاوره رایگان",
+    "homeAriaLabel": "مالی‌بان، صفحه اصلی",
+    "mainMenuAriaLabel": "منوی اصلی",
+    "openMenu": "باز کردن منو",
+    "closeMenu": "بستن منو"
+  },
+  "footer": {
+    "description": "مشاور حسابداری، مالیاتی و بیمه‌ای برای کسب‌وکارهای ایرانی؛ با شفافیت، دقت و استقلالی که هر کسب‌وکار سزاوار آن است.",
+    "pagesHeading": "صفحات",
+    "servicesHeading": "خدمات",
+    "contactHeading": "تماس با ما",
+    "addressLine": "تهران، خیابان ولیعصر، ساختمان مالی‌بان",
+    "rightsReserved": "مالی‌بان. تمامی حقوق محفوظ است.",
+    "privacy": "حریم خصوصی",
+    "terms": "قوانین و مقررات",
+    "socialInstagram": "اینستاگرام",
+    "socialTelegram": "تلگرام"
+  },
+  "languageSwitcher": {
+    "label": "زبان",
+    "switchTo": "تغییر زبان به"
+  },
+  "buttons": {
+    "callUs": "تماس تلفنی",
+    "whatsappMessage": "پیام در واتساپ",
+    "submitting": "در حال ارسال...",
+    "readMore": "ادامه مطلب",
+    "viewAll": "مشاهده همه خدمات",
+    "backToHome": "بازگشت به صفحه اصلی",
+    "contactUs": "تماس با ما"
+  },
+  "breadcrumbs": {
+    "home": "خانه",
+    "services": "خدمات",
+    "blog": "وبلاگ",
+    "navAriaLabel": "مسیر صفحه"
+  },
+  "forms": {
+    "fullName": "نام و نام‌خانوادگی",
+    "fullNamePlaceholder": "مثلاً علی رضایی",
+    "phone": "شماره موبایل",
+    "phonePlaceholder": "09121234567",
+    "messageOptional": "توضیح کوتاه درباره نیاز شما (اختیاری)",
+    "messagePlaceholder": "کسب‌وکار شما چه نیازی دارد؟",
+    "messagePlaceholderWithService": "سؤالم درباره «{service}» است...",
+    "submit": "ارسال درخواست مشاوره",
+    "submitting": "در حال ارسال...",
+    "successTitle": "درخواست شما ثبت شد",
+    "successBody": "یکی از کارشناسان مالی‌بان حداکثر تا یک روز کاری با شما تماس می‌گیرد.",
+    "errorGeneric": "ارسال درخواست با خطا مواجه شد. لطفاً دوباره تلاش کنید یا از طریق واتساپ پیام دهید.",
+    "errorNameTooShort": "لطفاً نام و نام‌خانوادگی خود را وارد کنید.",
+    "errorPhoneInvalid": "شماره موبایل معتبر نیست. مثال: 09121234567",
+    "close": "بستن"
+  },
+  "whatsapp": {
+    "ariaLabel": "گفتگو در واتساپ"
+  },
+  "notFound": {
+    "eyebrow": "404",
+    "title": "این صفحه پیدا نشد",
+    "description": "ممکن است آدرس اشتباه وارد شده باشد یا صفحه جابه‌جا شده باشد. می‌توانید از لینک‌های زیر ادامه دهید یا مستقیم با ما تماس بگیرید.",
+    "popularPages": "صفحات پرکاربرد",
+    "ourServices": "خدمات مالی‌بان",
+    "metaTitle": "صفحه پیدا نشد"
+  },
+  "loading": "در حال بارگذاری..."
+}

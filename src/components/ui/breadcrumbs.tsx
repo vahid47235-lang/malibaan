@@ -1,15 +1,26 @@
-import Link from "next/link";
+import { Link } from "@/components/i18n/link";
 import { Container } from "@/components/ui/container";
 import { JsonLd, breadcrumbSchema, type BreadcrumbItem } from "@/lib/schema";
+import type { Locale } from "@/i18n/config";
 
-export function Breadcrumbs({ items }: { items: BreadcrumbItem[] }) {
-  const withHome: BreadcrumbItem[] = [{ label: "خانه", href: "/" }, ...items];
+export function Breadcrumbs({
+  items,
+  locale,
+  homeLabel,
+  navAriaLabel,
+}: {
+  items: BreadcrumbItem[];
+  locale: Locale;
+  homeLabel: string;
+  navAriaLabel: string;
+}) {
+  const withHome: BreadcrumbItem[] = [{ label: homeLabel, href: "/" }, ...items];
 
   return (
     <div className="border-b border-brand-line/70 bg-white">
       <Container>
-        <JsonLd data={breadcrumbSchema(withHome)} />
-        <nav aria-label="مسیر صفحه" className="py-3">
+        <JsonLd data={breadcrumbSchema(withHome, locale)} />
+        <nav aria-label={navAriaLabel} className="py-3">
           <ol className="flex flex-wrap items-center gap-2 text-sm text-brand-ink-400">
             {withHome.map((item, index) => {
               const isLast = index === withHome.length - 1;

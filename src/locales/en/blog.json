@@ -1,0 +1,24 @@
+{
+  "meta": {
+    "title": "Malibaan Blog",
+    "description": "Practical guides on accounting, tax, payroll, company registration, and audit — written by the Malibaan team for Iranian businesses.",
+    "ogTitle": "Malibaan Blog",
+    "ogDescription": "Practical guides on accounting, tax, and business finance for Iranian businesses."
+  },
+  "breadcrumb": "Blog",
+  "pageHeader": {
+    "eyebrow": "Malibaan Blog",
+    "title": "A practical guide to accounting, tax, and business finance",
+    "description": "Articles that walk through the real problems Iranian businesses face, in plain, practical language — written by the Malibaan team."
+  },
+  "categoryEyebrow": "Blog Category",
+  "categoryTitleTemplate": "{category} Articles",
+  "categoryMetaTitleTemplate": "{category} Articles",
+  "categoryMetaDescriptionTemplate": "Educational articles from the Malibaan blog on {category}.",
+  "categoryDescriptionTemplate": "Articles about {category} to help you make better decisions. For hands-on advice, see Malibaan's \"{service}\" service.",
+  "readingMinutesSuffix": "min read",
+  "authorLabel": "The Malibaan Team",
+  "relatedServicePromptTemplate": "To take a closer look at your business's \"{service}\" standing:",
+  "viewServiceCtaTemplate": "View {service}",
+  "relatedArticlesHeading": "Related Articles"
+}
