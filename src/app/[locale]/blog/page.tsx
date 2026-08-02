@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 import { Header } from "@/components/sections/header";
 import { Footer } from "@/components/sections/footer";
 import { WhatsAppButton } from "@/components/ui/whatsapp-button";

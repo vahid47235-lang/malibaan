@@ -1,44 +1,39 @@
 import Image from "next/image";
+import { getTranslations } from "next-intl/server";
 import { Container } from "@/components/ui/container";
 import { Button } from "@/components/ui/button";
 
-const trustPoints = [
-  "بیش از ۱۲ سال تجربه در حسابداری و مالیات",
-  "همکاری با بیش از ۲۰۰ کسب‌وکار ایرانی",
-  "پاسخگویی مستقیم توسط کارشناس، نه پشتیبانی خودکار",
-];
+export async function Hero() {
+  const t = await getTranslations("Hero");
+  const trustPoints = [t("trustPoint1"), t("trustPoint2"), t("trustPoint3")];
+  const titlePart2 = t("titlePart2");
 
-export function Hero() {
   return (
     <section className="relative overflow-hidden pt-14 pb-20 sm:pt-20 sm:pb-28">
       <Container className="grid items-center gap-12 lg:grid-cols-2 lg:gap-10">
         <div>
           <div className="inline-flex items-center gap-2 rounded-full border border-brand-green-900/15 bg-white px-4 py-1.5 text-sm font-medium text-brand-green-900">
             <span className="h-1.5 w-1.5 rounded-full bg-brand-mint-500" />
-            مشاور رسمی حسابداری، مالیاتی و بیمه‌ای
+            {t("badge")}
           </div>
 
           <h1 className="mt-6 text-4xl font-bold leading-[1.25] tracking-tight text-brand-ink-900 sm:text-5xl sm:leading-[1.2]">
-            مسیر مالی کسب‌وکارتان را
-            <span className="text-brand-green-900"> روشن، دقیق و قابل دفاع </span>
-            بسازید
+            {t("titlePart1")}
+            <span className="text-brand-green-900"> {t("titleHighlight")} </span>
+            {titlePart2}
           </h1>
 
-          <p className="mt-6 max-w-xl text-lg leading-8 text-brand-ink-600">
-            مالی‌بان کنار مدیران و صاحبان کسب‌وکار می‌ایستد تا حسابداری، مالیات و
-            بیمه، دیگر دغدغه روزانه‌شان نباشد؛ با گزارش‌های شفاف، مشاوره‌ای مستقل
-            و تیمی که پاسخگوی هر عدد در دفاتر شماست.
-          </p>
+          <p className="mt-6 max-w-xl text-lg leading-8 text-brand-ink-600">{t("description")}</p>
 
           <div className="mt-9 flex flex-wrap items-center gap-4">
             <Button href="/consultation" size="lg">
-              رزرو مشاوره رایگان
+              {t("ctaPrimary")}
               <svg width="16" height="16" viewBox="0 0 16 16" fill="none" className="rotate-180">
                 <path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
             </Button>
             <Button href="/services" variant="secondary" size="lg">
-              مشاهده خدمات
+              {t("ctaSecondary")}
             </Button>
           </div>
 
@@ -68,21 +63,19 @@ export function Hero() {
             <div className="relative flex h-full flex-col items-center justify-center gap-6 p-8 pb-16">
               <Image
                 src="/brand/png/white/malibaan-symbol-white-512.png"
-                alt="نماد مالی‌بان"
+                alt="Malibaan"
                 width={310}
                 height={397}
                 className="w-[62%] max-w-[240px] opacity-95 drop-shadow-[0_20px_40px_rgba(0,0,0,0.25)]"
                 priority
               />
-              <p className="text-center text-2xl font-bold leading-tight text-white">
-                شفافیت، تخصص، تحول در حسابداری.
-              </p>
+              <p className="text-center text-2xl font-bold leading-tight text-white">{t("tagline")}</p>
             </div>
           </div>
 
           <div className="absolute -bottom-6 start-4 hidden w-56 rounded-2xl border border-brand-line bg-white p-4 shadow-lg shadow-brand-ink-900/5 sm:block">
-            <p className="text-3xl font-bold text-brand-green-900">۹۸٪</p>
-            <p className="mt-1 text-sm text-brand-ink-600">رضایت مشتریان از دقت گزارش‌های مالی</p>
+            <p className="text-3xl font-bold text-brand-green-900">{t("statBadgeValue")}</p>
+            <p className="mt-1 text-sm text-brand-ink-600">{t("statBadgeLabel")}</p>
           </div>
         </div>
       </Container>

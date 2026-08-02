@@ -7,8 +7,11 @@ type ContactPayload = {
   phone?: unknown;
   message?: unknown;
   service?: unknown;
+  source?: unknown;
   honeypot?: unknown;
 };
+
+const VALID_SOURCES = new Set(["contact_form", "consultation_form"]);
 
 // NOTE: submissions are persisted to the leads table (visible in the admin
 // panel). Wiring real-time email/SMS notifications is a follow-up task once
@@ -37,8 +40,9 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: "invalid_phone" }, { status: 400 });
   }
 
-  const source = service === "مشاوره رایگان" ? "consultation_form" : "contact_form";
-  const fullMessage = service ? `[سرویس: ${service}] ${message}`.trim() : message || null;
+  const requestedSource = typeof payload.source === "string" ? payload.source : "";
+  const source = VALID_SOURCES.has(requestedSource) ? requestedSource : "contact_form";
+  const fullMessage = service ? `[${service}] ${message}`.trim() : message || null;
 
   await db.insert(leads).values({
     name,
