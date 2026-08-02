@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { getTranslations, getLocale } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import { Header } from "@/components/sections/header";
 import { Footer } from "@/components/sections/footer";
@@ -7,39 +8,40 @@ import { Container } from "@/components/ui/container";
 import { Breadcrumbs } from "@/components/ui/breadcrumbs";
 import { PageHeader } from "@/components/ui/page-header";
 import { ArticleCover } from "@/components/ui/article-cover";
-import { blogPosts, getAllCategories } from "@/lib/blog-data";
+import { getAllPosts, getAllCategories } from "@/lib/blog-data";
 import { formatJalaliDate, toPersianDigits } from "@/lib/utils";
 
-export const metadata: Metadata = {
-  title: "وبلاگ مالی‌بان",
-  description:
-    "مقالات آموزشی حسابداری، مالیات، حقوق و دستمزد، ثبت شرکت و حسابرسی؛ نوشته‌شده توسط تیم مالی‌بان برای کسب‌وکارهای ایرانی.",
-  alternates: { canonical: "/blog" },
-  openGraph: {
-    title: "وبلاگ مالی‌بان",
-    description: "مقالات آموزشی حسابداری، مالیات و امور مالی برای کسب‌وکارهای ایرانی.",
-    url: "https://malibaan.com/blog",
-  },
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const t = await getTranslations("Blog");
+  return {
+    title: t("indexTitle"),
+    description: t("indexDescription"),
+    alternates: { canonical: "/blog" },
+    openGraph: {
+      title: t("indexTitle"),
+      description: t("indexOgDescription"),
+      url: "https://malibaan.com/blog",
+    },
+  };
+}
 
-const sortedPosts = [...blogPosts].sort(
-  (a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime()
-);
+export default async function BlogIndexPage() {
+  const t = await getTranslations("Blog");
+  const locale = await getLocale();
+  const isFa = locale === "fa";
 
-export default function BlogIndexPage() {
-  const categories = getAllCategories();
+  const categories = getAllCategories(locale);
   const categoryLabels = Object.fromEntries(categories.map((c) => [c.slug, c.label]));
+  const sortedPosts = [...getAllPosts(locale)].sort(
+    (a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime()
+  );
 
   return (
     <>
       <Header />
       <main className="flex-1">
-        <Breadcrumbs items={[{ label: "وبلاگ", href: "/blog" }]} />
-        <PageHeader
-          eyebrow="وبلاگ مالی‌بان"
-          title="راهنمای عملی حسابداری، مالیات و امور مالی کسب‌وکار"
-          description="مقالاتی که مسائل واقعی کسب‌وکارهای ایرانی را با زبانی ساده و کاربردی توضیح می‌دهند؛ نوشته‌شده توسط تیم مالی‌بان."
-        />
+        <Breadcrumbs items={[{ label: t("breadcrumb"), href: "/blog" }]} />
+        <PageHeader eyebrow={t("indexTitle")} title={t("pageTitle")} description={t("pageDescription")} />
 
         <section className="py-14 sm:py-16">
           <Container>
@@ -52,7 +54,7 @@ export default function BlogIndexPage() {
                 >
                   {category.label}
                   <span className="ms-1.5 text-brand-ink-400">
-                    ({toPersianDigits(category.count)})
+                    ({isFa ? toPersianDigits(category.count) : category.count})
                   </span>
                 </Link>
               ))}
@@ -72,7 +74,7 @@ export default function BlogIndexPage() {
                   <ArticleCover tone={post.coverTone} label={categoryLabels[post.categorySlug] ?? ""} />
                   <div className="flex flex-1 flex-col p-3 pt-5">
                     <span className="text-xs font-medium text-brand-ink-400" dir="ltr">
-                      {formatJalaliDate(post.publishedAt)}
+                      {formatJalaliDate(post.publishedAt, locale)}
                     </span>
                     <h2 className="mt-2 text-lg font-bold leading-snug text-brand-ink-900">
                       {post.title}
@@ -81,13 +83,13 @@ export default function BlogIndexPage() {
                       {post.excerpt}
                     </p>
                     <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-brand-green-900">
-                      ادامه مطلب
+                      {t("continueReading")}
                       <svg
                         width="14"
                         height="14"
                         viewBox="0 0 16 16"
                         fill="none"
-                        className="rotate-180 transition-transform group-hover:-translate-x-1"
+                        className={isFa ? "rotate-180 transition-transform group-hover:-translate-x-1" : "transition-transform group-hover:translate-x-1"}
                       >
                         <path
                           d="M3 8H13M13 8L9 4M13 8L9 12"

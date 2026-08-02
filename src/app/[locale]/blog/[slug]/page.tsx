@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
+import { getTranslations, getLocale } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import { Header } from "@/components/sections/header";
 import { Footer } from "@/components/sections/footer";
@@ -9,12 +10,12 @@ import { Container } from "@/components/ui/container";
 import { Breadcrumbs } from "@/components/ui/breadcrumbs";
 import { ArticleCover } from "@/components/ui/article-cover";
 import { JsonLd, articleSchema } from "@/lib/schema";
-import { blogPosts, getPostBySlug, getRelatedPosts, getCategoryInfo } from "@/lib/blog-data";
+import { rawBlogPosts, getPostBySlug, getRelatedPosts, getCategoryInfo } from "@/lib/blog-data";
 import { getServiceBySlug } from "@/lib/services-data";
 import { formatJalaliDate, toPersianDigits } from "@/lib/utils";
 
 export function generateStaticParams() {
-  return blogPosts.map((post) => ({ slug: post.slug }));
+  return rawBlogPosts.map((post) => ({ slug: post.slug }));
 }
 
 export async function generateMetadata({
@@ -23,7 +24,8 @@ export async function generateMetadata({
   params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
   const { slug } = await params;
-  const post = getPostBySlug(slug);
+  const locale = await getLocale();
+  const post = getPostBySlug(slug, locale);
   if (!post) return {};
 
   return {
@@ -46,12 +48,15 @@ export default async function BlogPostPage({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const post = getPostBySlug(slug);
+  const locale = await getLocale();
+  const isFa = locale === "fa";
+  const post = getPostBySlug(slug, locale);
   if (!post) notFound();
 
-  const category = getCategoryInfo(post.categorySlug);
-  const relatedService = getServiceBySlug(post.categorySlug);
-  const relatedPosts = getRelatedPosts(post);
+  const t = await getTranslations("Blog");
+  const category = getCategoryInfo(post.categorySlug, locale);
+  const relatedService = getServiceBySlug(post.categorySlug, locale);
+  const relatedPosts = getRelatedPosts(post, locale);
 
   return (
     <>
@@ -68,7 +73,7 @@ export default async function BlogPostPage({
 
         <Breadcrumbs
           items={[
-            { label: "وبلاگ", href: "/blog" },
+            { label: t("breadcrumb"), href: "/blog" },
             { label: category.label, href: `/blog/category/${category.slug}` },
             { label: post.title, href: `/blog/${post.slug}` },
           ]}
@@ -87,11 +92,11 @@ export default async function BlogPostPage({
                 {post.title}
               </h1>
               <div className="mt-4 flex items-center gap-3 text-sm text-brand-ink-400">
-                <span dir="ltr">{formatJalaliDate(post.publishedAt)}</span>
+                <span dir="ltr">{formatJalaliDate(post.publishedAt, locale)}</span>
                 <span>·</span>
-                <span>{toPersianDigits(post.readingMinutes)} دقیقه مطالعه</span>
+                <span>{t("minutesRead", { minutes: isFa ? toPersianDigits(post.readingMinutes) : post.readingMinutes })}</span>
                 <span>·</span>
-                <span>تیم مالی‌بان</span>
+                <span>{t("byTeam")}</span>
               </div>
 
               <ArticleCover tone={post.coverTone} label={category.label} className="mt-8" />
@@ -140,14 +145,20 @@ export default async function BlogPostPage({
               {relatedService && (
                 <div className="mt-12 rounded-2xl border border-brand-line bg-brand-cream-100 p-6">
                   <p className="text-sm text-brand-ink-600">
-                    برای بررسی دقیق‌تر وضعیت «{relatedService.navLabel}» کسب‌وکار خود:
+                    {t("checkServiceLabel", { service: relatedService.navLabel })}
                   </p>
                   <Link
                     href={`/services/${relatedService.slug}`}
                     className="mt-2 inline-flex items-center gap-1.5 text-base font-bold text-brand-green-900 hover:underline"
                   >
-                    مشاهده خدمت {relatedService.navLabel}
-                    <svg width="14" height="14" viewBox="0 0 16 16" fill="none" className="rotate-180">
+                    {t("viewService", { service: relatedService.navLabel })}
+                    <svg
+                      width="14"
+                      height="14"
+                      viewBox="0 0 16 16"
+                      fill="none"
+                      className={isFa ? "rotate-180" : ""}
+                    >
                       <path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                     </svg>
                   </Link>
@@ -156,7 +167,7 @@ export default async function BlogPostPage({
 
               {relatedPosts.length > 0 && (
                 <div className="mt-12">
-                  <h2 className="text-lg font-bold text-brand-ink-900">مقالات مرتبط</h2>
+                  <h2 className="text-lg font-bold text-brand-ink-900">{t("relatedArticles")}</h2>
                   <div className="mt-5 flex flex-col gap-4">
                     {relatedPosts.map((related) => (
                       <Link

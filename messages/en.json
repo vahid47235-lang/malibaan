@@ -377,5 +377,23 @@
     "leadDescription": "Fill out the form and we'll contact you as soon as possible, or reach us directly by WhatsApp or phone.",
     "callButton": "Call Us",
     "whatsappButton": "Message on WhatsApp"
+  },
+  "Blog": {
+    "indexTitle": "Malibaan Blog",
+    "indexDescription": "Educational articles on accounting, tax, payroll, company registration, and audit — written by the Malibaan team for Iranian businesses.",
+    "indexOgDescription": "Educational articles on accounting, tax, and finance for Iranian businesses.",
+    "breadcrumb": "Blog",
+    "pageTitle": "A Practical Guide to Business Accounting, Tax, and Finance",
+    "pageDescription": "Articles that explain the real challenges Iranian businesses face, in plain, practical language — written by the Malibaan team.",
+    "continueReading": "Continue Reading",
+    "minutesRead": "{minutes} min read",
+    "byTeam": "The Malibaan Team",
+    "checkServiceLabel": "To take a closer look at your business's “{service}” situation:",
+    "viewService": "View {service} Service",
+    "relatedArticles": "Related Articles",
+    "categoryEyebrow": "Blog Category",
+    "categoryTitle": "{category} Articles",
+    "categoryDescriptionWithService": "Articles about {category} to help you make better decisions. For expert advice, check out Malibaan's {service} service.",
+    "categoryMetaDescription": "Educational articles from the Malibaan blog on {category}."
   }
 }
