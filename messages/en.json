@@ -358,5 +358,24 @@
     "errorName": "Please enter your full name.",
     "errorPhone": "That mobile number isn't valid. Example: 09121234567",
     "errorGeneric": "Something went wrong sending your request. Please try again or message us on WhatsApp."
+  },
+  "ServiceDetail": {
+    "benefitsEyebrow": "Why Get This Service From Malibaan",
+    "benefitsTitle": "Benefits That Make a Real Difference",
+    "offeringsEyebrow": "Scope of Services",
+    "offeringsTitle": "What We Cover in “{service}”",
+    "problemsEyebrow": "Problems We Solve",
+    "problemsTitle": "If You've Experienced Any of These, You're in the Right Place",
+    "processEyebrow": "Our Process",
+    "processTitle": "A Clear Path, Step by Step",
+    "industriesEyebrow": "Who This Is For",
+    "industriesTitle": "Industries We Work With Most in This Area",
+    "faqEyebrow": "Frequently Asked Questions",
+    "faqTitle": "Questions People Ask Most About “{service}”",
+    "relatedTitle": "Related Services",
+    "leadTitle": "Talk to an Expert About “{service}”",
+    "leadDescription": "Fill out the form and we'll contact you as soon as possible, or reach us directly by WhatsApp or phone.",
+    "callButton": "Call Us",
+    "whatsappButton": "Message on WhatsApp"
   }
 }
