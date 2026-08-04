@@ -57,9 +57,15 @@
     "trustPoint1": "12+ years of accounting and tax experience",
     "trustPoint2": "Trusted by 200+ Iranian businesses",
     "trustPoint3": "Direct answers from a real expert, not automated support",
-    "tagline": "Transparency, expertise, transformation in accounting.",
-    "statBadgeValue": "98%",
-    "statBadgeLabel": "of clients satisfied with the accuracy of our financial reports"
+    "statementTitle": "Monthly Performance Summary",
+    "statementSubtitle": "Sample Malibaan report",
+    "statementBadge": "Reconciled",
+    "rowRevenue": "Operating revenue",
+    "rowCosts": "Operating costs",
+    "rowProfit": "Net profit",
+    "stampText": "Updated: today",
+    "calloutRole": "Your dedicated Malibaan expert",
+    "calloutText": "“I reviewed this month's net profit — it matches the books exactly.”"
   },
   "StatsBar": {
     "stat1Value": "12+",
