@@ -6,7 +6,18 @@ export type BreadcrumbItem = {
   href: string;
 };
 
-export function organizationSchema() {
+const ORG_DESCRIPTION: Record<string, string> = {
+  fa: "مالی‌بان، مشاور حسابداری، مالیاتی و بیمه‌ای برای کسب‌وکارهای ایرانی؛ از ثبت شرکت تا حسابرسی.",
+  en: "Malibaan is an accounting, tax, and insurance advisory firm for Iranian businesses, from company registration to auditing.",
+};
+
+const ORG_ADDRESS: Record<string, { streetAddress: string; addressLocality: string }> = {
+  fa: { streetAddress: "خیابان ولیعصر، ساختمان مالی‌بان", addressLocality: "تهران" },
+  en: { streetAddress: "Valiasr Street, Malibaan Building", addressLocality: "Tehran" },
+};
+
+export function organizationSchema(locale: string = "fa") {
+  const address = ORG_ADDRESS[locale] ?? ORG_ADDRESS.fa;
   return {
     "@context": "https://schema.org",
     "@type": "Organization",
@@ -15,12 +26,10 @@ export function organizationSchema() {
     alternateName: "Malibaan",
     url: SITE_URL,
     logo: `${SITE_URL}/brand/malibaan-mark.png`,
-    description:
-      "مالی‌بان، مشاور حسابداری، مالیاتی و بیمه‌ای برای کسب‌وکارهای ایرانی؛ از ثبت شرکت تا حسابرسی.",
+    description: ORG_DESCRIPTION[locale] ?? ORG_DESCRIPTION.fa,
     address: {
       "@type": "PostalAddress",
-      streetAddress: "خیابان ولیعصر، ساختمان مالی‌بان",
-      addressLocality: "تهران",
+      ...address,
       addressCountry: "IR",
     },
     contactPoint: {
@@ -28,13 +37,14 @@ export function organizationSchema() {
       telephone: "+98-990-003-5009",
       contactType: "customer service",
       areaServed: "IR",
-      availableLanguage: ["fa"],
+      availableLanguage: ["fa", "en"],
     },
     sameAs: ["https://instagram.com/malibaan", "https://t.me/malibaan"],
   };
 }
 
-export function localBusinessSchema() {
+export function localBusinessSchema(locale: string = "fa") {
+  const address = ORG_ADDRESS[locale] ?? ORG_ADDRESS.fa;
   return {
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
@@ -46,8 +56,7 @@ export function localBusinessSchema() {
     priceRange: "$$",
     address: {
       "@type": "PostalAddress",
-      streetAddress: "خیابان ولیعصر، ساختمان مالی‌بان",
-      addressLocality: "تهران",
+      ...address,
       addressCountry: "IR",
     },
   };

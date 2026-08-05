@@ -1,19 +1,20 @@
+import { getTranslations, getLocale } from "next-intl/server";
 import { Container } from "@/components/ui/container";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { getFeaturedTestimonials, getTestimonialsForService } from "@/lib/testimonials-data";
 
-export function Testimonials({ serviceSlug }: { serviceSlug?: string }) {
-  const testimonials = serviceSlug ? getTestimonialsForService(serviceSlug) : getFeaturedTestimonials();
+export async function Testimonials({ serviceSlug }: { serviceSlug?: string }) {
+  const t = await getTranslations("Testimonials");
+  const locale = await getLocale();
+  const testimonials = serviceSlug
+    ? getTestimonialsForService(serviceSlug, locale)
+    : getFeaturedTestimonials(locale);
   if (testimonials.length === 0) return null;
 
   return (
     <section className="bg-white py-20 sm:py-28">
       <Container>
-        <SectionHeading
-          eyebrow="اعتماد مشتریان"
-          title="آنچه کسب‌وکارهایی که با ما کار می‌کنند، می‌گویند"
-          align="center"
-        />
+        <SectionHeading eyebrow={t("eyebrow")} title={t("title")} align="center" />
 
         <div className="mt-14 grid gap-6 lg:grid-cols-3">
           {testimonials.map((testimonial) => (

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import Link from "next/link";
+import { getTranslations, getLocale } from "next-intl/server";
+import { Link } from "@/i18n/navigation";
 import { Header } from "@/components/sections/header";
 import { Footer } from "@/components/sections/footer";
 import { WhatsAppButton } from "@/components/ui/whatsapp-button";
@@ -22,13 +23,15 @@ export async function generateMetadata({
   params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
   const { slug } = await params;
-  const category = getCategoryInfo(slug);
-  const posts = getPostsByCategory(slug);
+  const locale = await getLocale();
+  const t = await getTranslations("Blog");
+  const category = getCategoryInfo(slug, locale);
+  const posts = getPostsByCategory(slug, locale);
   if (posts.length === 0) return {};
 
   return {
-    title: `مقالات ${category.label}`,
-    description: `مقالات آموزشی وبلاگ مالی‌بان در حوزه ${category.label}.`,
+    title: t("categoryTitle", { category: category.label }),
+    description: t("categoryMetaDescription", { category: category.label }),
     alternates: { canonical: `/blog/category/${slug}` },
   };
 }
@@ -39,11 +42,13 @@ export default async function BlogCategoryPage({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const posts = getPostsByCategory(slug);
+  const locale = await getLocale();
+  const t = await getTranslations("Blog");
+  const posts = getPostsByCategory(slug, locale);
   if (posts.length === 0) notFound();
 
-  const category = getCategoryInfo(slug);
-  const service = getServiceBySlug(slug);
+  const category = getCategoryInfo(slug, locale);
+  const service = getServiceBySlug(slug, locale);
 
   return (
     <>
@@ -51,16 +56,16 @@ export default async function BlogCategoryPage({
       <main className="flex-1">
         <Breadcrumbs
           items={[
-            { label: "وبلاگ", href: "/blog" },
+            { label: t("breadcrumb"), href: "/blog" },
             { label: category.label, href: `/blog/category/${slug}` },
           ]}
         />
         <PageHeader
-          eyebrow="دسته‌بندی وبلاگ"
-          title={`مقالات ${category.label}`}
+          eyebrow={t("categoryEyebrow")}
+          title={t("categoryTitle", { category: category.label })}
           description={
             service
-              ? `مقالاتی درباره ${category.label} که به شما در تصمیم‌گیری بهتر کمک می‌کنند. برای دریافت مشاوره تخصصی، خدمت «${service.navLabel}» مالی‌بان را ببینید.`
+              ? t("categoryDescriptionWithService", { category: category.label, service: service.navLabel })
               : undefined
           }
         />
@@ -77,7 +82,7 @@ export default async function BlogCategoryPage({
                   <ArticleCover tone={post.coverTone} label={category.label} />
                   <div className="flex flex-1 flex-col p-3 pt-5">
                     <span className="text-xs font-medium text-brand-ink-400" dir="ltr">
-                      {formatJalaliDate(post.publishedAt)}
+                      {formatJalaliDate(post.publishedAt, locale)}
                     </span>
                     <h2 className="mt-2 text-lg font-bold leading-snug text-brand-ink-900">
                       {post.title}

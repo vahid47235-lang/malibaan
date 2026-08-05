@@ -9,15 +9,19 @@ export type LegalSection = {
 export function LegalContent({
   sections,
   lastUpdated,
+  lastUpdatedLabel,
 }: {
   sections: LegalSection[];
   lastUpdated: string;
+  lastUpdatedLabel: string;
 }) {
   return (
     <section className="py-16 sm:py-24">
       <Container>
         <div className="mx-auto max-w-3xl">
-          <p className="text-sm text-brand-ink-400">آخرین به‌روزرسانی: {lastUpdated}</p>
+          <p className="text-sm text-brand-ink-400">
+            {lastUpdatedLabel}: {lastUpdated}
+          </p>
           <div className="mt-8 flex flex-col gap-10">
             {sections.map((section) => (
               <div key={section.heading}>

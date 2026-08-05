@@ -50,8 +50,26 @@ function gregorianToJalali(gy: number, gm: number, gd: number): [number, number,
   return [jy, jm, jd];
 }
 
-export function formatJalaliDate(isoDate: string): string {
+const gregorianMonthsEn = [
+  "January",
+  "February",
+  "March",
+  "April",
+  "May",
+  "June",
+  "July",
+  "August",
+  "September",
+  "October",
+  "November",
+  "December",
+];
+
+export function formatJalaliDate(isoDate: string, locale: string = "fa"): string {
   const [gy, gm, gd] = isoDate.split("-").map(Number);
+  if (locale === "en") {
+    return `${gregorianMonthsEn[gm - 1]} ${gd}, ${gy}`;
+  }
   const [jy, jm, jd] = gregorianToJalali(gy, gm, gd);
   return toPersianDigits(`${jd} ${jalaliMonths[jm - 1]} ${jy}`);
 }

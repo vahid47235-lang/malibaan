@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import Link from "next/link";
+import { getTranslations, getLocale } from "next-intl/server";
+import { Link } from "@/i18n/navigation";
 import { Header } from "@/components/sections/header";
 import { Footer } from "@/components/sections/footer";
 import { Testimonials } from "@/components/sections/testimonials";
@@ -26,7 +27,8 @@ export async function generateMetadata({
   params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
   const { slug } = await params;
-  const service = getServiceBySlug(slug);
+  const locale = await getLocale();
+  const service = getServiceBySlug(slug, locale);
   if (!service) return {};
 
   return {
@@ -47,10 +49,13 @@ export default async function ServiceDetailPage({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const service = getServiceBySlug(slug);
+  const locale = await getLocale();
+  const service = getServiceBySlug(slug, locale);
   if (!service) notFound();
 
-  const relatedServices = getRelatedServices(service);
+  const t = await getTranslations("ServiceDetail");
+  const tNav = await getTranslations("Nav");
+  const relatedServices = getRelatedServices(service, locale);
 
   return (
     <>
@@ -67,7 +72,7 @@ export default async function ServiceDetailPage({
 
         <Breadcrumbs
           items={[
-            { label: "خدمات", href: "/services" },
+            { label: tNav("services"), href: "/services" },
             { label: service.navLabel, href: `/services/${service.slug}` },
           ]}
         />
@@ -81,8 +86,8 @@ export default async function ServiceDetailPage({
         <section className="py-20 sm:py-24">
           <Container>
             <SectionHeading
-              eyebrow="چرا این خدمت را از مالی‌بان بگیرید"
-              title="مزیت‌هایی که در عمل تفاوت ایجاد می‌کند"
+              eyebrow={t("benefitsEyebrow")}
+              title={t("benefitsTitle")}
               align="center"
               className="mx-auto"
             />
@@ -104,8 +109,8 @@ export default async function ServiceDetailPage({
           <section className="bg-white py-20 sm:py-24">
             <Container>
               <SectionHeading
-                eyebrow="دامنه خدمات"
-                title={`مواردی که در «${service.navLabel}» پوشش می‌دهیم`}
+                eyebrow={t("offeringsEyebrow")}
+                title={t("offeringsTitle", { service: service.navLabel })}
                 align="center"
                 className="mx-auto"
               />
@@ -142,8 +147,8 @@ export default async function ServiceDetailPage({
         <section className="bg-brand-green-950 py-20 text-white sm:py-24">
           <Container>
             <SectionHeading
-              eyebrow="مشکلاتی که حل می‌کنیم"
-              title="اگر یکی از این‌ها را تجربه کرده‌اید، جای درستی آمده‌اید"
+              eyebrow={t("problemsEyebrow")}
+              title={t("problemsTitle")}
               className="[&_h2]:text-white [&_p:first-child]:text-brand-mint-400"
             />
             <ul className="mt-10 grid gap-4 sm:grid-cols-2">
@@ -178,8 +183,8 @@ export default async function ServiceDetailPage({
         <section className="py-20 sm:py-28">
           <Container>
             <SectionHeading
-              eyebrow="روند اجرا"
-              title="مسیری روشن، قدم به قدم"
+              eyebrow={t("processEyebrow")}
+              title={t("processTitle")}
               align="center"
             />
             <div className="relative mt-16 grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
@@ -187,7 +192,7 @@ export default async function ServiceDetailPage({
               {service.process.map((step, index) => (
                 <div key={step.title} className="relative flex flex-col items-center text-center">
                   <div className="relative z-10 grid h-12 w-12 place-items-center rounded-full border border-brand-green-900/20 bg-brand-cream-50 text-lg font-bold text-brand-green-900">
-                    {toPersianDigits(String(index + 1).padStart(2, "0"))}
+                    {locale === "fa" ? toPersianDigits(String(index + 1).padStart(2, "0")) : String(index + 1).padStart(2, "0")}
                   </div>
                   <h3 className="mt-5 text-lg font-bold text-brand-ink-900">{step.title}</h3>
                   <p className="mt-2 text-[15px] leading-7 text-brand-ink-600">{step.description}</p>
@@ -201,8 +206,8 @@ export default async function ServiceDetailPage({
         <section className="bg-white py-20 sm:py-24">
           <Container>
             <SectionHeading
-              eyebrow="مناسب چه کسب‌وکارهایی"
-              title="صنایعی که بیشترین همکاری را با ما در این حوزه دارند"
+              eyebrow={t("industriesEyebrow")}
+              title={t("industriesTitle")}
               align="center"
             />
             <div className="mt-10 flex flex-wrap justify-center gap-3">
@@ -224,8 +229,8 @@ export default async function ServiceDetailPage({
         <section className="py-20 sm:py-28">
           <Container>
             <SectionHeading
-              eyebrow="سؤالات متداول"
-              title={`سؤالاتی که درباره «${service.navLabel}» بیشتر می‌پرسند`}
+              eyebrow={t("faqEyebrow")}
+              title={t("faqTitle", { service: service.navLabel })}
               align="center"
               className="mx-auto"
             />
@@ -239,7 +244,7 @@ export default async function ServiceDetailPage({
         {relatedServices.length > 0 && (
           <section className="bg-white py-16 sm:py-20">
             <Container>
-              <h2 className="text-xl font-bold text-brand-ink-900">خدمات مرتبط</h2>
+              <h2 className="text-xl font-bold text-brand-ink-900">{t("relatedTitle")}</h2>
               <div className="mt-6 flex flex-wrap gap-4">
                 {relatedServices.map((related) => (
                   <Link
@@ -247,7 +252,7 @@ export default async function ServiceDetailPage({
                     href={`/services/${related.slug}`}
                     className="rounded-xl border border-brand-line bg-brand-cream-50 px-5 py-3 text-sm font-semibold text-brand-green-900 hover:border-brand-green-900/30"
                   >
-                    {related.navLabel} ←
+                    {locale === "fa" ? `${related.navLabel} ←` : `${related.navLabel} →`}
                   </Link>
                 ))}
               </div>
@@ -261,18 +266,17 @@ export default async function ServiceDetailPage({
             <div className="grid gap-10 rounded-[2rem] border border-brand-line bg-brand-cream-100 p-8 sm:p-12 lg:grid-cols-2 lg:gap-16">
               <div>
                 <h2 className="text-2xl font-bold leading-tight text-brand-ink-900 sm:text-3xl">
-                  برای «{service.navLabel}» با یک کارشناس صحبت کنید
+                  {t("leadTitle", { service: service.navLabel })}
                 </h2>
                 <p className="mt-4 text-[15px] leading-7 text-brand-ink-600">
-                  فرم را پر کنید تا در اسرع وقت با شما تماس بگیریم، یا مستقیم از طریق واتساپ یا
-                  تماس تلفنی با ما در ارتباط باشید.
+                  {t("leadDescription")}
                 </p>
                 <div className="mt-6 flex flex-wrap gap-3">
                   <Button href="tel:+989900035009" variant="secondary">
-                    تماس تلفنی
+                    {t("callButton")}
                   </Button>
                   <Button href="https://wa.me/989900035009" variant="secondary">
-                    پیام در واتساپ
+                    {t("whatsappButton")}
                   </Button>
                 </div>
               </div>
